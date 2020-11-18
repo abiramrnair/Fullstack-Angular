@@ -13,23 +13,23 @@ h1 {
 }
 
 .button {    
-    background-color: #FF9999;
+    background-color:#FF9999;
     border: none;
-    color: #FFF;
+    color: white;
     padding: 15px 30px;
     text-align: center;
     font-size: 40px;
-    margin: 4px 2px;
-    opacity: 0.6;
+    margin: 4px 2px;    
     transition: 0.3s;    
     text-decoration: none;
     cursor: pointer;
     border-radius: 10px;    
     margin-left: 15%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;    
 }
 
 .button:hover {
-    background-color: #FFA07A;
+    background-color:#FFA07A;
 }
 
 .button-box {

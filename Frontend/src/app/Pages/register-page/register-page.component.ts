@@ -12,4 +12,11 @@ export class RegisterPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  private setSession(username: string, accessToken: string, refreshToken: string) {
+    localStorage.setItem('username', username);
+    localStorage.setItem('x-access-token', accessToken);
+    localStorage.setItem('x-refresh-token', refreshToken);
+
+  }
 }

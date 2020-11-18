@@ -64,10 +64,14 @@ input {
     border: none;
     margin-bottom: 5%;
     font-size: 15px;
-    font-style: italic;
     border: none;
     outline: none;
-    border-radius: 7px;        
+    border-radius: 7px; 
+    font-family: 'Courier New', Courier, monospace;      
+}
+
+input::placeholder {
+    padding-left: 1%;
 }
 
 .formdiv {
