@@ -7,6 +7,7 @@ import { LandingPageComponent } from './Pages/landing-page/landing-page.componen
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { RegisterPageComponent } from './Pages/register-page/register-page.component';
 import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
+import { WebrequestinterceptorService } from './webrequestinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.co
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ 
+    { provide: HTTP_INTERCEPTORS, useClass: WebrequestinterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

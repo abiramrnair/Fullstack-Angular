@@ -6,7 +6,7 @@
             <h4>Username</h4><input #usernameInput type="text" placeholder="Enter Desired Username">
             <h4>Email</h4><input #emailInput type="email" placeholder="Enter Valid Email">
             <h4>Password</h4><input #passwordInput type="password" placeholder="Enter Desired Password">
-            <button class="button" (click)="registerButton(usernameInput.value, emailInput.value, passwordInput)">Submit</button>
+            <button class="button" (click)="registerButton(usernameInput.value, emailInput.value, passwordInput.value)">Submit</button>
             <h5 routerLink="/login">Login Here</h5>
         </div>
     </div>

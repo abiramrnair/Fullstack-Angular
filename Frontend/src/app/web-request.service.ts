@@ -38,6 +38,12 @@ export class WebRequestService {
   }
 
   register(username: string, email: string, password: string) {
-
+    return this.http.post(`${this.MAIN_URL}/api/public/register`, {
+      username,
+      email,
+      password
+    }, {
+      observe: 'response'
+    })
   }
 }

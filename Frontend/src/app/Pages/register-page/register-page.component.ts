@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/authentication.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-register-page',
@@ -14,9 +15,9 @@ export class RegisterPageComponent implements OnInit {
   }
 
   registerButton(username: string, email: string, password: string) {
-    this.authentication.register(username, email, password).subscribe((items: any) => {
-      console.log(items)
-    });
+    this.authentication.register(username, email, password).subscribe((res: HttpResponse<any>) => {
+      console.log(res)
+  });
   }
 
   

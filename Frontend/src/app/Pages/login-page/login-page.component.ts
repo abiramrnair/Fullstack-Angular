@@ -15,9 +15,17 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   } 
 
+  invalid: any;
+
   loginButton(username: string, password: string) {
       this.authentication.login(username, password).subscribe((res: HttpResponse<any>) => {
+        
+        if (res.status == 200) {
           console.log(res)
+          this.invalid = 0;          
+        } else {
+          this.invalid = 1;
+        }          
       });
   }
 
