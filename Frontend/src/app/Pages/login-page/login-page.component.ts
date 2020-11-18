@@ -16,13 +16,9 @@ export class LoginPageComponent implements OnInit {
   } 
 
   loginButton(username: string, password: string) {
-    this.authentication.login(username, password).subscribe((items: any) => {
-
-        localStorage.setItem('username', items.username)
-        localStorage.setItem('x-access-token', items.accessToken)
-        localStorage.setItem('x-refresh-token', items.refreshToken)
-        
-    });
+      this.authentication.login(username, password).subscribe((res: HttpResponse<any>) => {
+          console.log(res)
+      });
   }
 
   logout() {

@@ -26,5 +26,18 @@ export class WebRequestService {
 
   delete(uri : string) {
     return this.http.delete(`${this.MAIN_URL}/${uri}`);
-  } 
+  }
+
+  login(username: string, password: string) {
+    return this.http.post(`${this.MAIN_URL}/api/public/login`, {
+      username,
+      password
+    }, { 
+      observe: 'response'
+    });
+  }
+
+  register(username: string, email: string, password: string) {
+
+  }
 }

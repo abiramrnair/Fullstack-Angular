@@ -59,14 +59,15 @@ h5:hover {
 
 input {
     height: 50px;
-    width: 100%;
+    width: 97%;
     background: #E8E8E8;
     border: none;
     margin-bottom: 5%;
     font-size: 15px;
     border-radius: 7px; 
     font-family: 'Courier New', Courier, monospace;
-    outline: none;               
+    outline: none;
+    padding-left: 3%;            
 }
 
 input::placeholder {

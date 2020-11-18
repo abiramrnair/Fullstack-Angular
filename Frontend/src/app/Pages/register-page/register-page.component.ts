@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/authentication.service';
 
 @Component({
   selector: 'app-register-page',
@@ -7,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authentication: AuthenticationService) { }
 
   ngOnInit(): void {
   }
 
-
-  private setSession(username: string, accessToken: string, refreshToken: string) {
-    localStorage.setItem('username', username);
-    localStorage.setItem('x-access-token', accessToken);
-    localStorage.setItem('x-refresh-token', refreshToken);
-
+  registerButton(username: string, email: string, password: string) {
+    this.authentication.register(username, email, password).subscribe((items: any) => {
+      console.log(items)
+    });
   }
+
+  
 }
