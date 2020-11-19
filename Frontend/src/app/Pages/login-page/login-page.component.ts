@@ -1,6 +1,7 @@
-import { HttpResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { error } from 'protractor';
 import { AuthenticationService } from 'src/app/authentication.service';
 
 @Component({
@@ -15,20 +16,15 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   } 
 
-  invalid: any;
+  invalid: string;
 
   loginButton(username: string, password: string) {
       this.authentication.login(username, password).subscribe((res: HttpResponse<any>) => {
-        
-        if (res.status == 200) {
-          console.log(res)
-          this.invalid = 0;          
-        } else {
-          this.invalid = 1;
-        }          
-      });
-  }
 
+          this.router.navigate(['/dashboard']);     
+      }, (error: HttpErrorResponse) => { this.invalid = "Login Failed" });
+  }
+  
   logout() {
     this.authentication.logout();
   }

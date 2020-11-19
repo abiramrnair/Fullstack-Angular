@@ -16,5 +16,8 @@ export class UserDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.username = this.authenticate.getUserName();
   }  
-    
+  
+  logOutButton() {
+    this.authenticate.logout();
+  }
 }

@@ -22,7 +22,8 @@ h2 {
     text-align: center;
     color: black; 
     background-color: #DCDCDC;
-    height: 30px;   
+    height: 30px;
+    font-family: 'Courier New', Courier, monospace;  
 }
 
 .circle_button {

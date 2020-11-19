@@ -44,8 +44,11 @@ export class AuthenticationService {
   }
 
   logout() { // Logout method
+    const token = this.getRefreshToken();
+    const headers = { 'x-refresh-token': token };
+    this.http.delete(`${this.webReqService.MAIN_URL}/api/public/logout`, { headers }).subscribe();   
     this.removeSession();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']);     
   }
 
   getAccessToken() { // gets token to append to url

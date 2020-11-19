@@ -6,7 +6,7 @@
             <h4>Username</h4><input #usernameinput type="text" placeholder="Enter Username">
             <h4>Password</h4><input #passwordinput type="password" placeholder="Enter Password">
             <button class="button" (click)="loginButton(usernameinput.value, passwordinput.value)">Submit</button>
-            <h4 *ngIf="this.invalid == 1">Invalid Credentials</h4>
+            <p class="errormessage">{{ invalid }}</p>
             <h5 routerLink="/register">New User? Register Here</h5>
         </div>
     </div>

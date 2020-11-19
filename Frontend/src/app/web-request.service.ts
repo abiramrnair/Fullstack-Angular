@@ -36,7 +36,7 @@ export class WebRequestService {
       observe: 'response'
     });
   }
-
+  
   register(username: string, email: string, password: string) {
     return this.http.post(`${this.MAIN_URL}/api/public/register`, {
       username,
