@@ -60,6 +60,10 @@ export class AuthenticationService {
     return localStorage.getItem('x-refresh-token');
   }
 
+  getUserName() {
+    return localStorage.getItem('username');
+  }
+
   getNewAccessToken() {
       return this.http.get(`${this.webReqService.MAIN_URL}/api/protected/token`, {
         headers: {
