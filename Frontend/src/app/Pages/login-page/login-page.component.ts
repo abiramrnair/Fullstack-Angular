@@ -18,8 +18,8 @@ export class LoginPageComponent implements OnInit {
 
   invalid: string;
 
-  loginButton(username: string, password: string) {
-      this.authentication.login(username, password).subscribe((res: HttpResponse<any>) => {
+  loginButton(email: string, password: string) {
+      this.authentication.login(email, password).subscribe((res: HttpResponse<any>) => {
 
           this.router.navigate(['/dashboard']);     
       }, (error: HttpErrorResponse) => { this.invalid = "Login Failed" });

@@ -28,9 +28,9 @@ export class WebRequestService {
     return this.http.delete(`${this.MAIN_URL}/${uri}`);
   }
 
-  login(username: string, password: string) {
+  login(email: string, password: string) {
     return this.http.post(`${this.MAIN_URL}/api/public/login`, {
-      username,
+      email,
       password
     }, { 
       observe: 'response'

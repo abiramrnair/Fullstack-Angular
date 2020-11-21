@@ -3,9 +3,9 @@
 
         <div class="formdiv">
             <h1>Login</h1>
-            <h4>Username</h4><input #usernameinput type="text" placeholder="Enter Username">
+            <h4>Username</h4><input #emailinput type="text" placeholder="Enter Email">
             <h4>Password</h4><input #passwordinput type="password" placeholder="Enter Password">
-            <button class="button" (click)="loginButton(usernameinput.value, passwordinput.value)">Submit</button>
+            <button class="button" (click)="loginButton(emailinput.value, passwordinput.value)">Submit</button>
             <p class="errormessage">{{ invalid }}</p>
             <h5 routerLink="/register">New User? Register Here</h5>
         </div>

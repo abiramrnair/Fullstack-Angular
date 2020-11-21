@@ -12,8 +12,8 @@ export class AuthenticationService {
 
   constructor(private webReqService: WebRequestService, private router: Router, private http: HttpClient) { }
 
-  login(username: string, password: string) {
-     return this.webReqService.login(username, password).pipe(
+  login(email: string, password: string) {
+     return this.webReqService.login(email, password).pipe(
 
       tap((res: HttpResponse<any>) => {
           this.setSession(res.body.username, res.body.accessToken, res.body.refreshToken);
