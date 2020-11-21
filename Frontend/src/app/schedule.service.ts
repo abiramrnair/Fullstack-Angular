@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AuthenticationService } from './authentication.service';
 import { WebRequestService } from './web-request.service';
 
 @Injectable({
@@ -6,18 +7,18 @@ import { WebRequestService } from './web-request.service';
 })
 export class ScheduleService {
 
-  constructor(private webReqService: WebRequestService) { }
+  constructor(private webReqService: WebRequestService, private authentication: AuthenticationService) { }
 
   createSchedule(name: string) {
-    return this.webReqService.put('api/schedules/createschedule?name=' + name);
+    return this.webReqService.createSchedule(name);
   }
 
   getSchedules() {
-    return this.webReqService.get('api/schedules/dropdown');
+    return this.webReqService.get('api/private/schedules/listmyschedules');
   }
 
   getScheduleItems(schedule_id: string) {
-    return this.webReqService.get(`api/schedules/load/${schedule_id}`);    
+    return this.webReqService.get(`api/private/schedules/load/${schedule_id}`);    
   }
 
   deleteAllSchedules() {

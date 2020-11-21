@@ -20,4 +20,5 @@ export class UserDashboardComponent implements OnInit {
   logOutButton() {
     this.authenticate.logout();
   }
+  
 }

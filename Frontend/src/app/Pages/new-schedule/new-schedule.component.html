@@ -1,1 +1,17 @@
-<p>new-schedule works!</p>
+<div class="view-box">
+    <div class="modal-box">
+        <h1>
+            Create New Schedule
+        </h1>
+
+        <div>
+           <input #ScheduleNameInput class="search-box" type="text" placeholder="Enter a schedule name">           
+        </div>
+
+        <div>
+            <button class="button" routerLink="/user/schedules">Cancel</button>
+            <button class="button" (click)="addScheduleButton(ScheduleNameInput.value)">Add</button>
+        </div>
+        
+    </div>
+</div>

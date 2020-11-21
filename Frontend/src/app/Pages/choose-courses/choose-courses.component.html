@@ -1,1 +1,97 @@
-<p>choose-courses works!</p>
+<div class="view-box">
+    <div class="course-manager-container">
+        <div class="sidebar">
+            <h1 class="column_title">
+                Search<br>
+                
+                <div>
+                    <div class="searchbox">
+                        
+                    <label class="search-title">Subject: </label>
+                      <select #SelectBoxInput class="selectbox" id="select_subject" name="subject">
+                        <option hidden>All Subjects</option>
+                        <option *ngFor="let subject of subjects">{{ subject }}
+                        </option>
+                                       
+                    </select><br>                   
+
+                    </div>
+                    
+                    <div class="searchbox">
+                        <label class="search-title">Course Code: </label>
+                        <input #CourseCodeInput class="textbox" type="text" maxlength="5" id="course_nbr" name="course_number" placeholder="eg. 1927A"><br>
+                    
+                    </div>
+
+                    <div class="searchbox">
+                    
+                    <label class="search-title">Component: </label>
+                    <select #ComponentInput class="selectbox" id="components" name="course_cmpnt">
+                        <option value="all_components">All</option>
+                        <option value="LEC">Lecture</option>
+                        <option value="TUT">Tutorial</option>
+                        <option value="LAB">Laboratory</option>
+                    </select><br>        
+                    
+                    </div>
+
+                </div>
+        
+            </h1>
+
+            <div class="search-menu">
+                                             
+            </div>
+
+            <button id="search" class="add_schedule_button" (click)="listCourses( SelectBoxInput.value, CourseCodeInput.value , ComponentInput.value)" >Search</button>
+            <button class="add_schedule_button" routerLink="/user/schedules/{{schedule}}">Back</button>
+        </div>
+
+        <div class="courses-list-container">
+            <h1 class="box_title">
+                Courses                
+            </h1>
+            
+            <ng-container *ngIf="size > 0; else elseTemplate">
+
+                <div class="displaybox">
+                    <div class= "course" *ngFor="let course of courses">                
+                            <h3>{{ course.subject }} {{ course.catalog_nbr }} - {{ course.className }} <button class="view-button" (click)="addCourse(course.className, course.subject , course.catalog_nbr)">+</button></h3>                    
+                            <p>{{ course.catalog_description }}</p>      
+                            <table>
+                                <tr>
+                                    <th>Section</th>
+                                    <th>Component</th>
+                                    <th>Class Number</th>
+                                    <th>Days</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Campus</th>
+                                    <th>Instructor</th>
+                                    <th>Status</th>
+                                </tr>
+                                <tr>
+                                    <td>{{ course.course_info[0].class_section }}</td>
+                                    <td class="{{ course.course_info[0].ssr_component }}">{{ course.course_info[0].ssr_component }}</td>
+                                    <td>{{ course.course_info[0].class_nbr }}</td>
+                                    <td>{{ course.course_info[0].days }}</td>
+                                    <td>{{ course.course_info[0].start_time }}</td>
+                                    <td>{{ course.course_info[0].end_time }}</td>
+                                    <td>{{ course.course_info[0].campus }}</td>
+                                    <td>{{ course.course_info[0].instructors }}</td>
+                                    <td>{{ course.course_info[0].enrl_stat }}</td>
+                                </tr>
+                                
+                            </table> 
+                    </div> 
+                </div>    
+
+            </ng-container>           
+
+            <ng-template #elseTemplate>
+                <h3 class="boxmessage" *ngIf="size == 0">Course Not Found</h3>
+                <h3 class="boxmessage" *ngIf="size == -1">Search For A Course</h3>              
+            </ng-template>                  
+        </div>
+    </div>
+</div>

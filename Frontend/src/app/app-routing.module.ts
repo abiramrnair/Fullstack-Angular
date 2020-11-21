@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'dashboard', component: UserDashboardComponent},
   { path: 'user/schedules', component: SchedulesViewComponent},
   { path: 'user/schedules/new-schedule', component: NewScheduleComponent},
-  { path: 'user/schedules/choose-courses', component: ChooseCoursesComponent}
+  { path: 'user/schedules/:schedule_name', component: SchedulesViewComponent},
+  { path: 'user/schedules/:schedule_name/addcourses', component: ChooseCoursesComponent}
 ];
 
 @NgModule({

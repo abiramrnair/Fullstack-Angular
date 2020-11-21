@@ -46,4 +46,12 @@ export class WebRequestService {
       observe: 'response'
     })
   }
+
+  createSchedule(schedule_name: string) {
+    return this.http.put(`${this.MAIN_URL}/api/private/schedules/createschedule`, {
+      schedule_name
+    }, {
+      observe: 'response'
+    })
+  }
 }

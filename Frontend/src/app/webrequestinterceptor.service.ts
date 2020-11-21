@@ -1,6 +1,6 @@
 import { HttpErrorResponse, HttpHandler, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { empty, Observable } from 'rxjs';
+import { empty, Observable, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AuthenticationService } from './authentication.service';
 import { throwError } from 'rxjs'
@@ -15,13 +15,14 @@ export class WebrequestinterceptorService {
   constructor(private authentication: AuthenticationService) { }
 
   refreshingAccessToken: boolean;
+  accessTokenRefreshed: Subject<any> = new Subject();
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<any> {
       request = this.addToken(request);
       return next.handle(request).pipe(
         catchError((error: HttpErrorResponse) => {
           
-          if ((error.status === 401 || error.status === 403) && !this.refreshingAccessToken) {
+          if ((error.status === 401 || error.status === 403)) {
 
               return this.refreshAccessToken()
                 .pipe(
