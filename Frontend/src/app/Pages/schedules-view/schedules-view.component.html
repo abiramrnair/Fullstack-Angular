@@ -30,7 +30,8 @@
                     <div class="schedule-item" *ngFor="let item of items; let i = index">                
                             <p class="course_name">{{i + 1}}. {{ item.course_name }}</p>
                             <p class="other_info">Subject Code: {{ item.subject_code }}</p> 
-                            <p class="other_info">Course Code: {{ item.course_code }}</p>               
+                            <p class="other_info">Course Code: {{ item.course_code }}</p>                            
+                            <button id="review_button" class="button" routerLink="/user/schedules/{{this.schedule}}/{{ item.subject_code + ' ' + item.course_code + ' - ' + item.course_name }}/write-review">Add Review</button>                                           
                     </div>
                 </div>   
                 

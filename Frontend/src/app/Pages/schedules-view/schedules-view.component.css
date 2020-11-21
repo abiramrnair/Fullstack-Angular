@@ -90,6 +90,7 @@ div {
     padding: 5px 20px;
     border-radius: 5px;
     margin-bottom: 20px;
+    border: 1px solid black;
 }
 
 .course_name {
@@ -210,5 +211,27 @@ div {
 }
 
 #homebutton:hover {
+    background-color: #FF9999;       
+}
+
+#review_button {
+    background-color: #9370DB;
+    border: none;
+    color: white;
+    position: relative;
+    left: 70%;    
+    height: 30px;
+    width: 150px;
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    margin-bottom: 2%;   
+    cursor: pointer;
+    border-radius: 5px;    
+    opacity: 0.6; 
+}
+
+#review_button:hover {
     background-color: #FF9999;       
 }

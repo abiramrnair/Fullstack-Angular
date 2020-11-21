@@ -16,6 +16,7 @@ export class SchedulesViewComponent implements OnInit {
   items: any[];
   schedule: string;
   size: any;
+  course_title: string;
 
   ngOnInit(): void {
 

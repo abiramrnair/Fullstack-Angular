@@ -23,4 +23,8 @@ export class CourseService {
   doesCourseExist(schedule_name: string, course_name: string, course_code: string) {
     return this.webReqService.get('api/private/schedules/check?' + 'schedule_name=' + schedule_name + '&course_name=' + course_name + '&course_code=' + course_code);
   }
+
+  addCourseReview(review: string, course: string) {
+    return this.webReqService.addReview(review, course);
+  }
 }

@@ -66,4 +66,13 @@ export class WebRequestService {
     }) 
   }
 
+  addReview(review: string, course: string) {
+    return this.http.put(`${this.MAIN_URL}/api/private/schedules/courses/add-review`, {
+      course,
+      review
+    }, {
+      observe: 'response'
+    })
+  }
+
 }

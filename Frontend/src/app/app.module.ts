@@ -11,6 +11,7 @@ import { WebrequestinterceptorService } from './webrequestinterceptor.service';
 import { ChooseCoursesComponent } from './Pages/choose-courses/choose-courses.component';
 import { NewScheduleComponent } from './Pages/new-schedule/new-schedule.component';
 import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.component';
+import { WriteReviewComponent } from './Pages/write-review/write-review.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.co
     UserDashboardComponent,
     ChooseCoursesComponent,
     NewScheduleComponent,
-    SchedulesViewComponent
+    SchedulesViewComponent,
+    WriteReviewComponent
   ],
   imports: [
     BrowserModule,
