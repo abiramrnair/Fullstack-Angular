@@ -8,6 +8,9 @@ import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { RegisterPageComponent } from './Pages/register-page/register-page.component';
 import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
 import { WebrequestinterceptorService } from './webrequestinterceptor.service';
+import { ChooseCoursesComponent } from './Pages/choose-courses/choose-courses.component';
+import { NewScheduleComponent } from './Pages/new-schedule/new-schedule.component';
+import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { WebrequestinterceptorService } from './webrequestinterceptor.service';
     LandingPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ChooseCoursesComponent,
+    NewScheduleComponent,
+    SchedulesViewComponent
   ],
   imports: [
     BrowserModule,
