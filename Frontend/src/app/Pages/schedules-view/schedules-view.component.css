@@ -110,6 +110,7 @@ div {
 
 .column_title {
     margin-top: -10px;
+    margin-left: -13%;
 }
 
 .view-button {
@@ -125,9 +126,9 @@ div {
     border: none;
     cursor: pointer;
     position: relative;
-    left: 350px;
-    margin-left: 15px;
-    outline: none;
+    left: 60%;
+    margin-left: 3%;
+    outline: none;    
 }
 
 .view-button:hover {
@@ -194,4 +195,20 @@ div {
     top: 230px;
     left: 430px;
     color: #989898;
+}
+
+#homebutton {
+    height: 30px;
+    width: 50px;
+    position: relative;
+    padding: 0;
+    left: -2%;
+    top: -80%;
+    text-align: center;
+    color: white;
+    background: #DC143C;
+}
+
+#homebutton:hover {
+    background-color: #FF9999;       
 }

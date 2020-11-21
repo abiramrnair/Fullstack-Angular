@@ -49,5 +49,4 @@ export class SchedulesViewComponent implements OnInit {
   deleteAllSchedules() {
 
   }
-  
 }
