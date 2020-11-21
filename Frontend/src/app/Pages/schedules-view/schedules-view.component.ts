@@ -43,10 +43,14 @@ export class SchedulesViewComponent implements OnInit {
   }
 
   deletethisSchedule() {
-
+      return this.scheduleService.deletethisSchedule(this.schedule).subscribe((res: any) => {
+        console.log(res);
+      })
   }
 
   deleteAllSchedules() {
-
+    return this.scheduleService.deleteAllSchedules().subscribe((res: any) => {
+        console.log(res);
+    })
   }
 }

@@ -48,7 +48,7 @@ export class ChooseCoursesComponent implements OnInit {
     })          
   }
 
-  addCourse(course_name: string, subject_code: string, course_code: string) { // user adds to given schedule
+  addCourseButton(course_name: string, subject_code: string, course_code: string) { // user adds to given schedule
 
     this.courseService.doesCourseExist(this.schedule, course_name, course_code).subscribe((message: any) => {
 
@@ -57,8 +57,8 @@ export class ChooseCoursesComponent implements OnInit {
       }
 
       else {
-        this.courseService.addCourse(this.schedule, course_name, subject_code, course_code).subscribe((items: any) => {
-          console.log("Added Course To Schedule")
+        return this.courseService.addCourse(this.schedule, course_name, subject_code, course_code).subscribe((message: any) => {
+          console.log(message.body.message)
         })
       }
     })      

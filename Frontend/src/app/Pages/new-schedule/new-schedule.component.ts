@@ -15,10 +15,11 @@ export class NewScheduleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addScheduleButton(schedule_name: string) {
-    this.scheduleService.createSchedule(schedule_name).subscribe((response: any) => {
+  addScheduleButton(schedule_name: string, schedule_description: string) {
+    this.scheduleService.createSchedule(schedule_name, schedule_description).subscribe((response: any) => {
       this.router.navigate(['user/schedules', response.body.name]);
       console.log(response.body.name)
     })
   }
+  
 }

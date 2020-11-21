@@ -47,11 +47,23 @@ export class WebRequestService {
     })
   }
 
-  createSchedule(schedule_name: string) {
+  createSchedule(schedule_name: string, schedule_description: string) {
     return this.http.put(`${this.MAIN_URL}/api/private/schedules/createschedule`, {
-      schedule_name
+      schedule_name,
+      schedule_description
     }, {
       observe: 'response'
     })
   }
+
+  addCourses(schedule_name: string, course_name: string, subject_code: string, course_code: string) {
+    return this.http.put(`${this.MAIN_URL}/api/private/schedules/addcourse/${schedule_name}`, {
+      course_name,
+      subject_code,
+      course_code
+    }, {
+      observe: 'response'
+    }) 
+  }
+
 }

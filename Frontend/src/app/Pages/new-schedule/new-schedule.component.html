@@ -5,12 +5,13 @@
         </h1>
 
         <div>
-           <input #ScheduleNameInput class="search-box" type="text" placeholder="Enter a schedule name">           
+           <input #ScheduleNameInput class="search-box" type="text" placeholder="Enter a schedule name">  
+           <input #ScheduleDescriptionInput class="search-box" type="text" placeholder="Enter schedule description">         
         </div>
 
         <div>
             <button class="button" routerLink="/user/schedules">Cancel</button>
-            <button class="button" (click)="addScheduleButton(ScheduleNameInput.value)">Add</button>
+            <button class="button" (click)="addScheduleButton(ScheduleNameInput.value, ScheduleDescriptionInput.value)">Add</button>
         </div>
         
     </div>

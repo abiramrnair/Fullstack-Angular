@@ -9,8 +9,8 @@ export class ScheduleService {
 
   constructor(private webReqService: WebRequestService, private authentication: AuthenticationService) { }
 
-  createSchedule(name: string) {
-    return this.webReqService.createSchedule(name);
+  createSchedule(name: string, description: string) {
+    return this.webReqService.createSchedule(name, description);
   }
 
   getSchedules() {
@@ -22,10 +22,10 @@ export class ScheduleService {
   }
 
   deleteAllSchedules() {
-    return this.webReqService.delete('api/schedules/delete_all');
+    return this.webReqService.delete('api/private/schedules/deleteall');
   }
 
   deletethisSchedule(schedule_id: string) {
-    return this.webReqService.delete(`api/schedules/delete?schedule=${schedule_id}`);
+    return this.webReqService.delete(`api/private/schedules/deleteschedule/${schedule_id}`);
   }
 }
