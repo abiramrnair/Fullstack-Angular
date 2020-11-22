@@ -15,8 +15,10 @@ export class SchedulesViewComponent implements OnInit {
   lists: any[];
   items: any[];
   schedule: string;
+  schedule_size: any;
   size: any;
   course_title: string;
+  flag: string;  
 
   ngOnInit(): void {
 
@@ -24,17 +26,29 @@ export class SchedulesViewComponent implements OnInit {
       (params: Params) => {
           this.scheduleService.getScheduleItems(params.schedule_name).subscribe((items: any) => {
 
-              this.schedule = params.schedule_name; // Selected schedule 
-              
+              this.schedule = params.schedule_name; // Selected schedule                            
+
               if (!items) {
                   this.size = 0;
               }
 
-              else {
-                  this.items = items;
-                  this.size = items.length;
+              else {                                    
+                  this.items = items.array_list;
+                  this.schedule_size = 0;
+
+                  if (this.items != null) {
+                    this.schedule_size = 1;
+                    this.size = this.items.length;
+                  }
+
+                  if (items.flag == "Private") {
+                      this.flag = "Public";                      
+                  } 
+                  else if (items.flag == "Public") {
+                      this.flag = "Private";
+                  }                  
               }
-          })
+          })          
       }
     )
 
@@ -52,6 +66,13 @@ export class SchedulesViewComponent implements OnInit {
   deleteAllSchedules() {
     return this.scheduleService.deleteAllSchedules().subscribe((res: any) => {
         console.log(res);
+    })
+  }
+
+  switchFlag() {
+    return this.scheduleService.switchScheduleFlag(this.schedule).subscribe((res: any) => {
+      this.router.navigate(['user/schedules', this.schedule])
+      console.log(res);
     })
   }
 }

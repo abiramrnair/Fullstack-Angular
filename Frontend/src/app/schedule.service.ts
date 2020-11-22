@@ -28,4 +28,8 @@ export class ScheduleService {
   deletethisSchedule(schedule_id: string) {
     return this.webReqService.delete(`api/private/schedules/deleteschedule/${schedule_id}`);
   }
+
+  switchScheduleFlag(schedule_id: string) {
+    return this.webReqService.get(`api/private/schedules/${schedule_id}/switchflag`);
+  }
 }
