@@ -1,0 +1,20 @@
+<div class="view-box">    
+    <div class="schedule-manager-container">
+        <button id = "homebutton" class="add_schedule_button" routerLink="/dashboard">Back</button>
+        <h1>Public Reviews</h1>
+
+        <div class="review-container">
+        <ng-container *ngIf="size > 0; else elseTemplate">            
+            <div class="review-box" *ngFor="let review of reviews">
+                <h3>Course: {{ review.course }}</h3>
+                <h3>Submitted by: {{ review.username }}</h3>                
+                <p>{{ review.review }}</p>
+            </div>
+        </ng-container>
+        </div>           
+
+        <ng-template #elseTemplate>
+            <h3>No Reviews Have Been Written Yet</h3>             
+        </ng-template>        
+    </div>    
+</div>

@@ -7,6 +7,7 @@ import { NewScheduleComponent } from './Pages/new-schedule/new-schedule.componen
 import { RegisterPageComponent } from './Pages/register-page/register-page.component';
 import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.component';
 import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
+import { ViewReviewComponent } from './Pages/view-review/view-review.component';
 import { WriteReviewComponent } from './Pages/write-review/write-review.component';
 
 const routes: Routes = [
@@ -20,7 +21,9 @@ const routes: Routes = [
   { path: 'user/schedules/new-schedule', component: NewScheduleComponent},
   { path: 'user/schedules/:schedule_name', component: SchedulesViewComponent},
   { path: 'user/schedules/:schedule_name/addcourses', component: ChooseCoursesComponent},
-  { path: 'user/schedules/:schedule_name/:course_name/write-review', component: WriteReviewComponent}
+  { path: 'user/schedules/:schedule_name/:course_name/write-review', component: WriteReviewComponent},
+  { path: 'public/viewreviews', component: ViewReviewComponent}
+
 ];
 
 @NgModule({

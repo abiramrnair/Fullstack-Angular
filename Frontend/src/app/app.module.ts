@@ -12,6 +12,7 @@ import { ChooseCoursesComponent } from './Pages/choose-courses/choose-courses.co
 import { NewScheduleComponent } from './Pages/new-schedule/new-schedule.component';
 import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.component';
 import { WriteReviewComponent } from './Pages/write-review/write-review.component';
+import { ViewReviewComponent } from './Pages/view-review/view-review.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WriteReviewComponent } from './Pages/write-review/write-review.componen
     ChooseCoursesComponent,
     NewScheduleComponent,
     SchedulesViewComponent,
-    WriteReviewComponent
+    WriteReviewComponent,
+    ViewReviewComponent    
   ],
   imports: [
     BrowserModule,

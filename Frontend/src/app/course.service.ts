@@ -27,4 +27,8 @@ export class CourseService {
   addCourseReview(review: string, course: string) {
     return this.webReqService.addReview(review, course);
   }
+
+  getCourseReviewPublic() {
+    return this.webReqService.get('api/public/courses/get-review');
+  }
 }
