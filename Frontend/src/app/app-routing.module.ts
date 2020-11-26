@@ -4,6 +4,9 @@ import { ChooseCoursesComponent } from './Pages/choose-courses/choose-courses.co
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { NewScheduleComponent } from './Pages/new-schedule/new-schedule.component';
+import { PublicChooseCoursesComponent } from './Pages/public-choose-courses/public-choose-courses.component';
+import { PublicNewScheduleComponent } from './Pages/public-new-schedule/public-new-schedule.component';
+import { PublicSchedulesViewComponent } from './Pages/public-schedules-view/public-schedules-view.component';
 import { RegisterPageComponent } from './Pages/register-page/register-page.component';
 import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.component';
 import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
@@ -11,7 +14,6 @@ import { ViewReviewComponent } from './Pages/view-review/view-review.component';
 import { WriteReviewComponent } from './Pages/write-review/write-review.component';
 
 const routes: Routes = [
-
   { path: '', redirectTo: '/landing', pathMatch: 'full'},
   { path: 'landing', component: LandingPageComponent},
   { path: 'login', component: LoginPageComponent},
@@ -22,8 +24,11 @@ const routes: Routes = [
   { path: 'user/schedules/:schedule_name', component: SchedulesViewComponent},
   { path: 'user/schedules/:schedule_name/addcourses', component: ChooseCoursesComponent},
   { path: 'user/schedules/:schedule_name/:course_name/write-review', component: WriteReviewComponent},
-  { path: 'public/viewreviews', component: ViewReviewComponent}
-
+  { path: 'public/viewreviews', component: ViewReviewComponent},
+  { path: 'public/schedules', component: PublicSchedulesViewComponent},
+  { path: 'public/schedules/new-schedule', component: PublicNewScheduleComponent},
+  { path: 'public/schedules/:schedule_name', component: PublicSchedulesViewComponent},  
+  { path: 'public/schedules/:schedule_name/addcourses', component: PublicChooseCoursesComponent}
 ];
 
 @NgModule({

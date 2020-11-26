@@ -13,6 +13,9 @@ import { NewScheduleComponent } from './Pages/new-schedule/new-schedule.componen
 import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.component';
 import { WriteReviewComponent } from './Pages/write-review/write-review.component';
 import { ViewReviewComponent } from './Pages/view-review/view-review.component';
+import { PublicSchedulesViewComponent } from './Pages/public-schedules-view/public-schedules-view.component';
+import { PublicChooseCoursesComponent } from './Pages/public-choose-courses/public-choose-courses.component';
+import { PublicNewScheduleComponent } from './Pages/public-new-schedule/public-new-schedule.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ViewReviewComponent } from './Pages/view-review/view-review.component';
     NewScheduleComponent,
     SchedulesViewComponent,
     WriteReviewComponent,
-    ViewReviewComponent    
+    ViewReviewComponent,
+    PublicSchedulesViewComponent,
+    PublicChooseCoursesComponent,
+    PublicNewScheduleComponent    
   ],
   imports: [
     BrowserModule,

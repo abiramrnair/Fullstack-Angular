@@ -1,0 +1,44 @@
+<div class="view-box">
+    <div class="schedule-manager-container">
+        <div class="sidebar">
+            <h1 class="column_title">
+                <button id="homebutton" class="add_schedule_button" routerLink="/">Back</button>
+                Schedules                               
+            </h1>
+
+            <div class="item-menu">
+                <a class="list-item" *ngFor="let list of lists; let i = index" [routerLink]="['/public/schedules/', lists[i].schedule_id]" routerLinkActive="active">
+                    <p>{{ lists[i].schedule_id }}</p><span>{{ '[' + lists[i].schedule_flag + ']' }}</span>                    
+                </a>                                
+            </div>
+
+            <button class="add_schedule_button" routerLink="/public/schedules/new-schedule">Add Schedule</button>        
+
+        </div>
+
+        <div class="schedules-list-container">
+            <h1 class="box_title">
+                Items                                
+                <button *ngIf="schedule_size > 0" class="view-button" routerLink="/public/schedules/{{this.schedule}}/addcourses">+</button>                
+            </h1>
+            <p *ngIf="schedule_size != 0" class="ownertitle">(Made By The User {{ owner }})</p> 
+            <ng-container *ngIf="size > 0; else elseTemplate">
+
+                <div class="displaybox">                
+                    <div class="schedule-item" *ngFor="let item of items; let i = index">                
+                            <p class="course_name">{{i + 1}}. {{ item.course_name }}</p>
+                            <p class="other_info">Subject Code: {{ item.subject_code }}</p> 
+                            <p class="other_info">Course Code: {{ item.course_code }}</p>                                                                
+                    </div>
+                </div>   
+                
+            </ng-container>
+
+            <ng-template #elseTemplate>
+                <h3 *ngIf="schedule_size == 0" class="boxmessage">This Schedule Looks Empty</h3>
+                <h3 *ngIf="schedule_size == 0" class="boxmessage">Add Courses by Clicking <button disabled id="helpbutton" class="view-button">+</button></h3>                
+                <h5 *ngIf="schedule_size == 0" class="creatortag">Designed by Abiram Nair</h5>                               
+            </ng-template>                 
+        </div>
+    </div>
+</div>
