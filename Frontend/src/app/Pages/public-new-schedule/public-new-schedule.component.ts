@@ -15,8 +15,18 @@ export class PublicNewScheduleComponent implements OnInit {
   }
 
   addScheduleButton(schedule_name: string) {
-    this.scheduleService.createPublicSchedule(schedule_name).subscribe((response: any) => {
-      this.router.navigate(['public/schedules/', response.name]);      
-    })
+
+    this.scheduleService.doesPublicScheduleExist(schedule_name).subscribe((response: any) => {
+        
+        if (response == "Schedule Exists") {
+            console.log("Schedule Exists")
+        }
+        
+        else {
+          this.scheduleService.createPublicSchedule(schedule_name).subscribe((response: any) => {
+            this.router.navigate(['public/schedules/', response.name]);      
+          })
+        }
+    })    
   }
 }

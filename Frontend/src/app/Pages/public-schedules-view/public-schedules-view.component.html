@@ -7,21 +7,22 @@
             </h1>
 
             <div class="item-menu">
-                <a class="list-item" *ngFor="let list of lists; let i = index" [routerLink]="['/public/schedules/', lists[i].schedule_id]" routerLinkActive="active">
+                <a class="list-item" *ngFor="let list of lists; let i = index" [routerLink]="['/public/schedules/', owner, lists[i].schedule_id]">
                     <p>{{ lists[i].schedule_id }}</p><span>{{ '[' + lists[i].schedule_flag + ']' }}</span>                    
                 </a>                                
             </div>
 
-            <button class="add_schedule_button" routerLink="/public/schedules/new-schedule">Add Schedule</button>        
+            <button class="add_schedule_button" routerLink="/public/viewreviews">Course Reviews</button>
+            <button class="add_schedule_button" routerLink="/public/schedules/viewcourses">View Courses</button>        
 
         </div>
 
         <div class="schedules-list-container">
             <h1 class="box_title">
-                Items                                
-                <button *ngIf="schedule_size > 0" class="view-button" routerLink="/public/schedules/{{this.schedule}}/addcourses">+</button>                
+                Items [{{ this.course_size }}]                       
             </h1>
-            <p *ngIf="schedule_size != 0" class="ownertitle">(Made By The User {{ owner }})</p> 
+            <p *ngIf="schedule_size != 0" class="ownertitle"><b>Made By: </b>{{ owner }}</p>
+            <p *ngIf="schedule_size != 0" class="ownertitle"><b>Description: </b> {{ description }}</p> 
             <ng-container *ngIf="size > 0; else elseTemplate">
 
                 <div class="displaybox">                
@@ -35,8 +36,9 @@
             </ng-container>
 
             <ng-template #elseTemplate>
-                <h3 *ngIf="schedule_size == 0" class="boxmessage">This Schedule Looks Empty</h3>
-                <h3 *ngIf="schedule_size == 0" class="boxmessage">Add Courses by Clicking <button disabled id="helpbutton" class="view-button">+</button></h3>                
+                <h3 *ngIf="schedule_size == 0" class="boxmessage">View Public Schedules</h3>
+                <h3 *ngIf="schedule_size == 0" class="boxmessage">Browse Courses</h3>        
+                <h3 *ngIf="schedule_size == 0" class="boxmessage">Read Course Reviews</h3>        
                 <h5 *ngIf="schedule_size == 0" class="creatortag">Designed by Abiram Nair</h5>                               
             </ng-template>                 
         </div>

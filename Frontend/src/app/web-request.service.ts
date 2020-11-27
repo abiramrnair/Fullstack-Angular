@@ -66,6 +66,16 @@ export class WebRequestService {
     }) 
   }
 
+  addPublicCourses(schedule_name: string, course_name: string, subject_code: string, course_code: string) {
+    return this.http.put(`${this.MAIN_URL}/api/public/schedules/addcourse/${schedule_name}`, {
+      course_name,
+      subject_code,
+      course_code
+    }, {
+      observe: 'response'
+    })
+  }
+
   addReview(review: string, course: string) {
     return this.http.put(`${this.MAIN_URL}/api/private/schedules/courses/add-review`, {
       course,

@@ -20,8 +20,12 @@ export class CourseService {
     return this.webReqService.addCourses(schedule_name, course_name, subject_code, course_code);
   }
 
+  addPublicCourse(schedule_name: string, course_name: string, subject_code: string, course_code: string) {
+    return this.webReqService.addPublicCourses(schedule_name, course_name, subject_code, course_code);
+  }
+
   doesCourseExist(schedule_name: string, course_name: string, course_code: string) {
-    return this.webReqService.get('api/private/schedules/check?' + 'schedule_name=' + schedule_name + '&course_name=' + course_name + '&course_code=' + course_code);
+    return this.webReqService.get('api/schedules/check?' + 'schedule_name=' + schedule_name + '&course_name=' + course_name + '&course_code=' + course_code);
   }
 
   addCourseReview(review: string, course: string) {

@@ -27,8 +27,8 @@ const routes: Routes = [
   { path: 'public/viewreviews', component: ViewReviewComponent},
   { path: 'public/schedules', component: PublicSchedulesViewComponent},
   { path: 'public/schedules/new-schedule', component: PublicNewScheduleComponent},
-  { path: 'public/schedules/:schedule_name', component: PublicSchedulesViewComponent},  
-  { path: 'public/schedules/:schedule_name/addcourses', component: PublicChooseCoursesComponent}
+  { path: 'public/schedules/viewcourses', component: PublicChooseCoursesComponent},
+  { path: 'public/schedules/:owner/:schedule_name', component: PublicSchedulesViewComponent}  
 ];
 
 @NgModule({

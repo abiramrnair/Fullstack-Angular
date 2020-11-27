@@ -45,7 +45,7 @@ export class PublicChooseCoursesComponent implements OnInit {
     })          
   }
 
-  addCourseButton(course_name: string, subject_code: string, course_code: string) { // user adds to given schedule
+  addPublicCourseButton(course_name: string, subject_code: string, course_code: string) { // user adds to given schedule
 
     this.courseService.doesCourseExist(this.schedule, course_name, course_code).subscribe((message: any) => {
 
@@ -54,7 +54,7 @@ export class PublicChooseCoursesComponent implements OnInit {
       }
 
       else {
-        return this.courseService.addCourse(this.schedule, course_name, subject_code, course_code).subscribe((message: any) => {
+        return this.courseService.addPublicCourse(this.schedule, course_name, subject_code, course_code).subscribe((message: any) => {
           console.log(message.body.message)
         })
       }

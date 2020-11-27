@@ -44,4 +44,12 @@ export class ScheduleService {
   switchScheduleFlag(schedule_id: string) {
     return this.webReqService.get(`api/private/schedules/${schedule_id}/switchflag`);
   }
+
+  doesPublicScheduleExist(schedule_id: string) {
+    return this.webReqService.get(`api/public/schedulecheck/${schedule_id}`);
+  }
+
+  doesPrivateScheduleExist(schedule_id: string) {
+    return this.webReqService.get(`api/private/schedulecheck/${schedule_id}`);
+  }
 }

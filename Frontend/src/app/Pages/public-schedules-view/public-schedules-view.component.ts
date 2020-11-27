@@ -17,9 +17,11 @@ export class PublicSchedulesViewComponent implements OnInit {
   schedule: string;
   schedule_size: any;
   size: any;
+  course_size: number;
   course_title: string;
   flag: string;  
   owner: any;
+  description: string;
 
   ngOnInit(): void {
 
@@ -29,7 +31,6 @@ export class PublicSchedulesViewComponent implements OnInit {
 
               this.schedule = params.schedule_name; // Selected schedule                            
               
-
               if (items.array_list == null) {                                    
                   this.size = 0;
                   this.schedule_size = 0;
@@ -37,6 +38,8 @@ export class PublicSchedulesViewComponent implements OnInit {
 
               else {                                    
                 this.items = items.array_list;
+                this.course_size = items.array_list.length;
+                this.description = items.description;
                 this.owner = items.owner;
                 this.schedule_size = 1;     
                 this.size = 1;                        
@@ -46,7 +49,7 @@ export class PublicSchedulesViewComponent implements OnInit {
     )
 
     this.scheduleService.getPublicSchedules().subscribe((lists: any[]) => {
-        this.lists = lists;        
+        this.lists = lists;                
     })
   }
 
