@@ -29,8 +29,8 @@ export class ScheduleService {
     return this.webReqService.get(`api/public/schedules/dropdown`);
   }
 
-  getPublicScheduleItems(schedule_id: string) { // Return public schedule items
-    return this.webReqService.get(`api/public/schedules/load/${schedule_id}`);
+  getPublicScheduleItems(schedule_owner: string, schedule_id: string) { // Return public schedule items
+    return this.webReqService.get(`api/public/schedules/load/${schedule_owner}/${schedule_id}`);
   } 
 
   deleteAllSchedules() {

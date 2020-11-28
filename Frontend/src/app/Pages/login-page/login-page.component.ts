@@ -21,9 +21,28 @@ export class LoginPageComponent implements OnInit {
   loginButton(email: string, password: string) {
       this.authentication.login(email, password).subscribe((res: HttpResponse<any>) => {
 
-          this.router.navigate(['/dashboard']);     
-      }, (error: HttpErrorResponse) => { this.invalid = "Login Failed" });
-  }
+        if (res.body.message == "Exists") {
+          this.invalid = "An Account With This Email Already Exists"
+        }
+  
+        else if (res.body.message == "Fill Out All Input Fields") {
+          this.invalid = "Fill Out All Input Fields"
+        }
+        
+        else if (res.body.message == "Invalid Email") {
+          this.invalid = "Invalid Email"
+        }
+
+        else if (res.body.message == "Account Inactive, Contact Administrator") {
+          this.invalid = "Account Inactive, Contact Administrator"
+        }
+
+        else {
+          this.router.navigate(['/dashboard']); 
+        }
+            
+      })
+  };
   
   logout() {
     this.authentication.logout();

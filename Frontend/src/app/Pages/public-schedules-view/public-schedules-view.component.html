@@ -7,7 +7,7 @@
             </h1>
 
             <div class="item-menu">
-                <a class="list-item" *ngFor="let list of lists; let i = index" [routerLink]="['/public/schedules/', owner, lists[i].schedule_id]">
+                <a class="list-item" *ngFor="let list of lists; let i = index" [routerLink]="['/public/schedules/', lists[i].schedule_creator, lists[i].schedule_id]" routerLinkActive="active">
                     <p>{{ lists[i].schedule_id }}</p><span>{{ '[' + lists[i].schedule_flag + ']' }}</span>                    
                 </a>                                
             </div>

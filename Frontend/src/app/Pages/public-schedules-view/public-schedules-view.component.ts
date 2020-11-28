@@ -27,10 +27,11 @@ export class PublicSchedulesViewComponent implements OnInit {
 
     this.route.params.subscribe(
       (params: Params) => {
-          this.scheduleService.getPublicScheduleItems(params.schedule_name).subscribe((items: any) => {
+          this.scheduleService.getPublicScheduleItems(params.owner, params.schedule_name).subscribe((items: any) => {
 
-              this.schedule = params.schedule_name; // Selected schedule                            
-              
+              this.schedule = params.schedule_name; // Selected schedule
+              this.owner = params.owner;                
+
               if (items.array_list == null) {                                    
                   this.size = 0;
                   this.schedule_size = 0;
@@ -39,8 +40,7 @@ export class PublicSchedulesViewComponent implements OnInit {
               else {                                    
                 this.items = items.array_list;
                 this.course_size = items.array_list.length;
-                this.description = items.description;
-                this.owner = items.owner;
+                this.description = items.description;                
                 this.schedule_size = 1;     
                 this.size = 1;                        
               }               

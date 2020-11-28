@@ -79,4 +79,13 @@ export class AuthenticationService {
       })
     )
   }
+
+  verifyLink(email: string, hashed_code: string) {
+      return this.http.post(`${this.webReqService.MAIN_URL}/api/user/verify`, {
+          email,
+          hashed_code
+        }, {
+          observe: 'response'
+    })
+  }
 }
