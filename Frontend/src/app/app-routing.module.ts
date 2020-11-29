@@ -13,14 +13,16 @@ import { PublicSchedulesViewComponent } from './Pages/public-schedules-view/publ
 import { RegisterPageComponent } from './Pages/register-page/register-page.component';
 import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.component';
 import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
+import { VerificationAckComponent } from './Pages/verification-ack/verification-ack.component';
 import { ViewReviewComponent } from './Pages/view-review/view-review.component';
 import { WriteReviewComponent } from './Pages/write-review/write-review.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/landing', pathMatch: 'full'},
+  { path: '', redirectTo: '/landing', pathMatch: 'full'},  
   { path: 'landing', component: LandingPageComponent},
   { path: 'login', component: LoginPageComponent},
   { path: 'register', component: RegisterPageComponent},
+  { path: 'verified', component: VerificationAckComponent},
   { path: 'dashboard', component: UserDashboardComponent},
   { path: 'user/schedules', component: SchedulesViewComponent},
   { path: 'user/schedules/new-schedule', component: NewScheduleComponent},
@@ -34,7 +36,8 @@ const routes: Routes = [
   { path: 'public/schedules/:owner/:schedule_name', component: PublicSchedulesViewComponent},
   { path: 'admin/dashboard', component: AdminDashboardComponent},
   { path: 'admin/dashboard/usersettings', component: AdminUsersettingsComponent},
-  { path: 'admin/dashboard/reviewsettings', component: AdminReviewsettingsComponent}  
+  { path: 'admin/dashboard/reviewsettings', component: AdminReviewsettingsComponent},
+  { path: '**', redirectTo: '/landing', pathMatch: 'full'},  
 ];
 
 @NgModule({

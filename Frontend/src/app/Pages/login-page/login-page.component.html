@@ -1,6 +1,5 @@
 <div class="view-box">
-    <div class="login-container">   
-
+    <div class="login-container">
         <div class="formdiv">
             <h1>Login</h1>
             <h4>Email</h4><input #emailinput type="text" placeholder="Enter Email">
@@ -8,6 +7,7 @@
             <button class="button" (click)="loginButton(emailinput.value, passwordinput.value)">Submit</button>
             <p class="errormessage">{{ invalid }}</p>
             <h5 routerLink="/register">New User? Register Here</h5>
+            <h5 id="hometag" routerLink="/landing">Home</h5>
         </div>
     </div>
 </div>

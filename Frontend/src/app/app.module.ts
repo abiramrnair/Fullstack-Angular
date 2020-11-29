@@ -19,6 +19,7 @@ import { PublicNewScheduleComponent } from './Pages/public-new-schedule/public-n
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
 import { AdminUsersettingsComponent } from './Pages/admin-usersettings/admin-usersettings.component';
 import { AdminReviewsettingsComponent } from './Pages/admin-reviewsettings/admin-reviewsettings.component';
+import { VerificationAckComponent } from './Pages/verification-ack/verification-ack.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AdminReviewsettingsComponent } from './Pages/admin-reviewsettings/admin
     PublicNewScheduleComponent,
     AdminDashboardComponent,
     AdminUsersettingsComponent,
-    AdminReviewsettingsComponent    
+    AdminReviewsettingsComponent,
+    VerificationAckComponent    
   ],
   imports: [
     BrowserModule,

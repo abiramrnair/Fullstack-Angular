@@ -34,14 +34,23 @@ export class RegisterPageComponent implements OnInit {
       }
       
       else if (res.body.message == "Invalid Email") {
-        this.message = "Invalid Email"
+        this.message = "Invalid Email (Incorrect Email Format)"
+      }
+
+      else if (res.body.message == "Invalid Username") {
+        this.message = "Invalid Username (Must Be Minimum 3 Characters)"
+      }
+
+      else if (res.body.message == "Invalid Password") {
+        this.message = "Invalid Password (Must Be Minimum 6 Characters)"
       }
 
       if (this.link != null) {
+        this.message = "";
         this.button = 1;
       }
       
-      else {
+      else {        
         this.button = 0;
       }
     });  

@@ -17,7 +17,6 @@ export class AuthenticationService {
 
       tap((res: HttpResponse<any>) => {
           this.setSession(res.body.username, res.body.accessToken, res.body.refreshToken);
-          console.log("Logged In")
       })
      )
   }
@@ -25,8 +24,7 @@ export class AuthenticationService {
   register(username: string, email: string, password: string) {
     return this.webReqService.register(username, email, password).pipe(
 
-      tap((res: HttpResponse<any>) => {
-          console.log("Registered")
+      tap((res: HttpResponse<any>) => {          
       })
     )
   }

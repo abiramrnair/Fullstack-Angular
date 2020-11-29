@@ -8,8 +8,9 @@
             <h4>Password</h4><input #passwordInput type="password" placeholder="Enter Desired Password">
             <button class="button" (click)="registerButton(usernameInput.value, emailInput.value, passwordInput.value)">Submit</button>
             <p *ngIf="message" class="errormessage">{{ message }}</p> 
-            <button *ngIf="button > 0" id="linkbutton" (click)="authButton()">Click To Verify Account</button>        
+            <button *ngIf="button > 0" id="linkbutton" (click)="authButton()" routerLink="/verified">Click To Verify Account</button>        
             <h5 routerLink="/login">Login Here</h5>
+            <h5 id="hometag" routerLink="/landing">Home</h5>
         </div>
     </div>
 </div>
