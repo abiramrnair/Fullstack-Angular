@@ -1,0 +1,11 @@
+<div class="view-box">
+    <div class="message-container">
+        <h2>Welcome {{ username }}</h2>
+        <h1>Administrator Dashboard</h1>        
+        <div class="formdiv">            
+            <button class="circle_button" routerLink="/admin/dashboard/usersettings">View Site Users</button>                   
+            <button class="circle_button" routerLink="/admin/dashboard/reviewsettings">Course Review Settings</button>
+            <button class="circle_button" (click)="logOutButton()">Logout</button>
+        </div>        
+    </div>
+</div>

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
+import { AdminReviewsettingsComponent } from './Pages/admin-reviewsettings/admin-reviewsettings.component';
+import { AdminUsersettingsComponent } from './Pages/admin-usersettings/admin-usersettings.component';
 import { ChooseCoursesComponent } from './Pages/choose-courses/choose-courses.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
@@ -28,11 +31,14 @@ const routes: Routes = [
   { path: 'public/schedules', component: PublicSchedulesViewComponent},
   { path: 'public/schedules/new-schedule', component: PublicNewScheduleComponent},
   { path: 'public/schedules/viewcourses', component: PublicChooseCoursesComponent},
-  { path: 'public/schedules/:owner/:schedule_name', component: PublicSchedulesViewComponent}  
+  { path: 'public/schedules/:owner/:schedule_name', component: PublicSchedulesViewComponent},
+  { path: 'admin/dashboard', component: AdminDashboardComponent},
+  { path: 'admin/dashboard/usersettings', component: AdminUsersettingsComponent},
+  { path: 'admin/dashboard/reviewsettings', component: AdminReviewsettingsComponent}  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

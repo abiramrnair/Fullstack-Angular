@@ -37,8 +37,12 @@ export class LoginPageComponent implements OnInit {
           this.invalid = "Account Inactive, Contact Administrator"
         }
 
+        else if (res.body.message == "Administrator") {
+          this.router.navigate(['/admin/dashboard']); 
+        }
+
         else {
-          this.router.navigate(['/dashboard']); 
+          this.router.navigate(['/dashboard']);
         }
             
       })

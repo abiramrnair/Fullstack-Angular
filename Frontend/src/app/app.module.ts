@@ -16,6 +16,9 @@ import { ViewReviewComponent } from './Pages/view-review/view-review.component';
 import { PublicSchedulesViewComponent } from './Pages/public-schedules-view/public-schedules-view.component';
 import { PublicChooseCoursesComponent } from './Pages/public-choose-courses/public-choose-courses.component';
 import { PublicNewScheduleComponent } from './Pages/public-new-schedule/public-new-schedule.component';
+import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
+import { AdminUsersettingsComponent } from './Pages/admin-usersettings/admin-usersettings.component';
+import { AdminReviewsettingsComponent } from './Pages/admin-reviewsettings/admin-reviewsettings.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { PublicNewScheduleComponent } from './Pages/public-new-schedule/public-n
     ViewReviewComponent,
     PublicSchedulesViewComponent,
     PublicChooseCoursesComponent,
-    PublicNewScheduleComponent    
+    PublicNewScheduleComponent,
+    AdminDashboardComponent,
+    AdminUsersettingsComponent,
+    AdminReviewsettingsComponent    
   ],
   imports: [
     BrowserModule,

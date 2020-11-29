@@ -85,4 +85,19 @@ export class WebRequestService {
     })
   }
 
+  switchUserPrivilege(user_email: string) {
+    return this.http.put(`${this.MAIN_URL}/api/admin/users/switchadmin`, {
+      email: user_email
+    })
+  }
+
+  switchUserFlag(user_email: string) {
+    return this.http.put(`${this.MAIN_URL}/api/admin/users/switchflag`, {
+      email: user_email
+    }, {
+      observe: 'response'
+    })
+  }
+
+
 }

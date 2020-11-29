@@ -26,6 +26,6 @@ export class WriteReviewComponent implements OnInit {
   addReviewButton(review: string) {      
       this.courseService.addCourseReview(review, this.course_name).subscribe((res: HttpResponse<any>) => {
         console.log(res)
-      })
+    })
   }
 }

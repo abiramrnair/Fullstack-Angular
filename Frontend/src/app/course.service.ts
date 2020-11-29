@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AuthenticationService } from './authentication.service';
 import { WebRequestService } from './web-request.service';
 
 @Injectable({
@@ -6,7 +7,7 @@ import { WebRequestService } from './web-request.service';
 })
 export class CourseService {
 
-  constructor(private webReqService: WebRequestService) { }
+  constructor(private webReqService: WebRequestService, private authentication: AuthenticationService) { }
 
   listCourses(subject: string, course_number: string, course_cmpnt: string) {
     return this.webReqService.get('api/courses?' + 'subject=' + subject + '&course_number=' +  course_number + '&course_cmpnt=' + course_cmpnt);

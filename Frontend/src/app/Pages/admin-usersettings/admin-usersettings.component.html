@@ -1,0 +1,23 @@
+<div class="view-box">    
+    <div class="schedule-manager-container">
+        <button id = "homebutton" class="add_schedule_button" routerLink="/admin/dashboard">Back</button>
+        <h1>Application User List</h1>
+
+        <div class="review-container">
+        <ng-container *ngIf="size > 0; else elseTemplate">            
+            <div class="review-box" *ngFor="let user of users; index as i">                
+                <h3>Username: {{ user.username }}</h3>
+                <h3>Email: {{ user.email }}</h3>
+                <h3>Role: {{ user.role }}</h3>
+                <h3>Status: {{ user.status }}</h3>      
+                <button class="add_schedule_button" (click)="switchAdminButton(user.email)">Make Admin</button>
+                <button class="add_schedule_button" (click)="switchActivationButton(user.email)">Switch Account Status</button>          
+            </div>
+        </ng-container>
+        </div>           
+
+        <ng-template #elseTemplate>
+            <h3 class="elsetext">No Users Have Been Registered Yet</h3>             
+        </ng-template>        
+    </div>    
+</div>

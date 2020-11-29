@@ -14,7 +14,7 @@ export class ScheduleService {
   }
 
   createPublicSchedule(name: string) {
-    return this.webReqService.put(`api/public/schedules/createschedule/${name}`)
+    return this.webReqService.put(`api/public/schedules/createschedule/${name}`);
   }
 
   getSchedules() { // Return userspecifc schedules
