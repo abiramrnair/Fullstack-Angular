@@ -14,28 +14,25 @@ export class AdminUsersettingsComponent implements OnInit {
 
   size: number;
   users: any[];
-  thing: string;
+  thing: string;  
 
   ngOnInit(): void {
 
       this.userService.listUsers().subscribe((items: any) => {
-          this.users = items;
-          console.log(items)
+          this.users = items;          
           this.size = items.length;
       })
   }
 
   switchAdminButton(email: string) {      
-      this.userService.switchUserAdmin(email).subscribe((response: HttpResponse<any>) => {
-          console.log(response)
-          this.router.navigate(['/admin/dashboard/usersettings']); 
+      this.userService.switchUserAdmin(email).subscribe((message: any) => {
+        this.router.navigate(['/admin/dashboard/usersettings']);          
     })
   }
 
   switchActivationButton(email: string) {
-      this.userService.switchUserFlag(email).subscribe((response: HttpResponse<any>) => {
-
-          this.router.navigate(['/admin/dashboard/usersettings']);          
+      this.userService.switchUserFlag(email).subscribe((message: any) => {
+        this.router.navigate(['/admin/dashboard/usersettings']);          
     })
   }
 

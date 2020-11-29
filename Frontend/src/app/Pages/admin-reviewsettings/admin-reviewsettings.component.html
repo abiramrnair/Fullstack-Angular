@@ -1,1 +1,23 @@
-<p>admin-reviewsettings works!</p>
+<div class="view-box">    
+    <div class="schedule-manager-container">
+        <button id = "homebutton" class="add_schedule_button" routerLink="/admin/dashboard">Back</button>
+        <h1>Course Review Visibility</h1>
+
+        <div class="review-container">
+        <ng-container *ngIf="size > 0; else elseTemplate">            
+            <div class="review-box" *ngFor="let review of reviews">
+                <h3>Course: {{ review.course }}</h3>
+                <h3>Submitted by: {{ review.username }}</h3>
+                <h3>Visibility: {{ review.visibility }}</h3>
+                <h3><u>Review Content</u></h3>                
+                <p>{{ review.review }}</p>
+                <button class="add_schedule_button" (click)="toggleReviewVisibilityButton(review.review_id)" routerLink="/admin/dashboard">Toggle Visibility</button>
+            </div>
+        </ng-container>
+        </div>           
+
+        <ng-template #elseTemplate>
+            <h3 class="elsetext">No Reviews Have Been Written Yet</h3>             
+        </ng-template>        
+    </div>    
+</div>

@@ -99,5 +99,11 @@ export class WebRequestService {
     })
   }
 
-
+  switchReview(review_id: string) {
+    return this.http.put(`${this.MAIN_URL}/api/admin/reviews/switchflag`, {
+      review_id: review_id
+    }, {
+      observe: 'response'
+    })
+  }
 }

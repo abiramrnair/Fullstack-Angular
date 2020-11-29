@@ -36,4 +36,12 @@ export class CourseService {
   getCourseReviewPublic() {
     return this.webReqService.get('api/public/courses/get-review');
   }
+
+  getAllCourseReviews() {
+    return this.webReqService.get('api/admin/reviews/displayall');
+  }
+
+  toggleReviewVisibility(review_id: string) {
+    return this.webReqService.switchReview(review_id);
+  }
 }

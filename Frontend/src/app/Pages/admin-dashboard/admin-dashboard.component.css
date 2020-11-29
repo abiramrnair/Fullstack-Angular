@@ -26,7 +26,7 @@ h2 {
 }
 
 .circle_button {
-    position: sticky;    
+    position: relative;    
     background-color: #FF9999;
     border: none;
     color: #FFF;
@@ -38,8 +38,8 @@ h2 {
     text-decoration: none;
     cursor: pointer;
     border-radius: 10px; 
-    margin-right: 20%;
-    width: 50%;
+    margin-left: -5%;
+    width: 65%;
     margin-bottom: 10%;    
 }
 

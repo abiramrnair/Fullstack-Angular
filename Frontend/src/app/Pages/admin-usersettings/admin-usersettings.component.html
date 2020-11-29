@@ -10,8 +10,8 @@
                 <h3>Email: {{ user.email }}</h3>
                 <h3>Role: {{ user.role }}</h3>
                 <h3>Status: {{ user.status }}</h3>      
-                <button class="add_schedule_button" (click)="switchAdminButton(user.email)">Make Admin</button>
-                <button class="add_schedule_button" (click)="switchActivationButton(user.email)">Switch Account Status</button>          
+                <button class="add_schedule_button" (click)="switchAdminButton(user.email)" routerLink="/admin/dashboard">Switch Account Role</button>
+                <button class="add_schedule_button" (click)="switchActivationButton(user.email)" routerLink="/admin/dashboard">Switch Account Status</button>          
             </div>
         </ng-container>
         </div>           
