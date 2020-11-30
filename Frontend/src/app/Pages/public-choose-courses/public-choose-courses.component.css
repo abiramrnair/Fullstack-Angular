@@ -42,6 +42,7 @@ div {
 }
 
 .add_schedule_button {
+    position: relative;
     background-color: #9370DB;
     border: none;
     color: white;
@@ -55,12 +56,28 @@ div {
     text-decoration: none;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
+    bottom: 15%;    
     outline: none;
 }
 
 .add_schedule_button:hover {
     background-color:  #FFA07A;
+}
+
+#gobutton {
+    position: relative;
+    padding: 10px 15px;
+    margin-left: 2%;
+    background: #4B0082;
+    color: white;
+    opacity: 1;
+    margin-left: 5%;
+    margin-top: 4%;
+    font-weight: bold;
+}
+
+#gobutton:hover {
+    background-color: #00008B;
 }
 
 .course-item {
@@ -98,6 +115,8 @@ div {
     margin-left: 10px;
     outline: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    border: none;
 }
 
 .searchbox {
@@ -107,7 +126,13 @@ div {
     top: -15px;   
     background-color: #FF9999;
     border-radius: 7px;
-    padding-bottom: 7px;    
+    padding-bottom: 7px;
+    max-height: 50px;    
+}
+
+#keywordsearch {    
+    min-width: 180px;
+    font-size: 16px;    
 }
 
 .selectbox {

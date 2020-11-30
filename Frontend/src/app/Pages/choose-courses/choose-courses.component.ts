@@ -40,11 +40,9 @@ export class ChooseCoursesComponent implements OnInit {
 
     this.size = 0;
 
-    this.courseService.listCourses(subject, course_number, course_cmpnt).subscribe((items: any) => {        
-          
+    this.courseService.listCourses(subject, course_number, course_cmpnt).subscribe((items: any) => {     
           this.courses = items;
-          this.size = items.length;
-                                        
+          this.size = items.length;                                        
     })          
   }
 
@@ -62,5 +60,13 @@ export class ChooseCoursesComponent implements OnInit {
         })
       }
     })      
-  }  
+  }
+  
+  softMatchSearchButton(search_string: string) {
+    this.size = 0;
+    this.courseService.softMatchListCourses(search_string).subscribe((items: any) => {        
+        this.courses = items;
+        this.size = items.length;
+    })
+  }
 }

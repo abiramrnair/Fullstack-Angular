@@ -12,6 +12,10 @@ export class CourseService {
   listCourses(subject: string, course_number: string, course_cmpnt: string) {
     return this.webReqService.get('api/courses?' + 'subject=' + subject + '&course_number=' +  course_number + '&course_cmpnt=' + course_cmpnt);
   }
+
+  softMatchListCourses(search_string: string) {
+    return this.webReqService.get(`api/courses/softmatch/${search_string}`);
+  }
   
   subjectDropDown() {
     return this.webReqService.get('api/dropdown');

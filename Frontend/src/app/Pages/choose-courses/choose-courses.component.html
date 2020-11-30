@@ -35,6 +35,10 @@
                     
                     </div>
 
+                    <div class="searchbox">                        
+                        <input #KeywordInput id="keywordsearch" class="textbox" type="text" name="course_number" placeholder="Enter Keywords"><button (click)="softMatchSearchButton(KeywordInput.value)" id="gobutton" class="add_schedule_button">GO</button><br>                    
+                    </div>
+
                 </div>
         
             </h1>
