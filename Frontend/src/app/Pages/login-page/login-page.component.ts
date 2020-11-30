@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
 
   loginButton(email: string, password: string) {
       this.authentication.login(email, password).subscribe((res: HttpResponse<any>) => {
-
+        
         if (res.body.message == "Exists") {
           this.invalid = "An Account With This Email Already Exists"
         }
@@ -29,8 +29,8 @@ export class LoginPageComponent implements OnInit {
           this.invalid = "Fill Out All Input Fields"
         }
         
-        else if (res.body.message == "Invalid Email") {
-          this.invalid = "Invalid Email"
+        else if (res.body.message == "Email Not Found") {
+          this.invalid = "This Email Has Not Been Registered"
         }
 
         else if (res.body.message == "Wrong Password") {

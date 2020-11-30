@@ -88,7 +88,7 @@ p {
 
 #homebutton {
     position: relative;
-    height: 60px;
+    min-height: 30px;
     width: 90px;
     position: relative;
     padding: 0;

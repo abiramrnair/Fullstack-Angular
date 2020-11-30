@@ -18,7 +18,7 @@
         </div>
 
         <div class="schedules-list-container">
-            <h1 class="box_title">
+            <h1 *ngIf="schedule_size > 0" class="box_title">
                 Items [{{ this.course_size }}]                       
             </h1>
             <p *ngIf="schedule_size != 0" class="ownertitle"><b>Made By: </b>{{ owner }}</p>
