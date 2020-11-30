@@ -20,4 +20,8 @@ export class UsermanagementService {
   switchUserFlag(email: string) {
       return this.webReqService.switchUserFlag(email);
   }
+
+  listUserInfo() {
+      return this.webReqService.get('api/private/userinfo');
+  }
 }

@@ -20,6 +20,7 @@ import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard
 import { AdminUsersettingsComponent } from './Pages/admin-usersettings/admin-usersettings.component';
 import { AdminReviewsettingsComponent } from './Pages/admin-reviewsettings/admin-reviewsettings.component';
 import { VerificationAckComponent } from './Pages/verification-ack/verification-ack.component';
+import { UserSettingsComponent } from './Pages/user-settings/user-settings.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VerificationAckComponent } from './Pages/verification-ack/verification-
     AdminDashboardComponent,
     AdminUsersettingsComponent,
     AdminReviewsettingsComponent,
-    VerificationAckComponent    
+    VerificationAckComponent,
+    UserSettingsComponent    
   ],
   imports: [
     BrowserModule,

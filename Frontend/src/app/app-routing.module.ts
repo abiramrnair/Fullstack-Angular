@@ -13,6 +13,7 @@ import { PublicSchedulesViewComponent } from './Pages/public-schedules-view/publ
 import { RegisterPageComponent } from './Pages/register-page/register-page.component';
 import { SchedulesViewComponent } from './Pages/schedules-view/schedules-view.component';
 import { UserDashboardComponent } from './Pages/user-dashboard/user-dashboard.component';
+import { UserSettingsComponent } from './Pages/user-settings/user-settings.component';
 import { VerificationAckComponent } from './Pages/verification-ack/verification-ack.component';
 import { ViewReviewComponent } from './Pages/view-review/view-review.component';
 import { WriteReviewComponent } from './Pages/write-review/write-review.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterPageComponent},
   { path: 'verified', component: VerificationAckComponent},
   { path: 'dashboard', component: UserDashboardComponent},
+  { path: 'dashboard/usersettings', component: UserSettingsComponent},
   { path: 'user/schedules', component: SchedulesViewComponent},
   { path: 'user/schedules/new-schedule', component: NewScheduleComponent},
   { path: 'user/schedules/:schedule_name', component: SchedulesViewComponent},

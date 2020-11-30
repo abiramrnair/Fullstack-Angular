@@ -1,0 +1,16 @@
+<div class="view-box">
+    <div class="message-container">        
+        <h1>Your Account Information</h1>        
+        <div class="formdiv">            
+            <h3>Your Email: {{ email }}</h3>
+            <h3>Application Role: {{ role }}</h3>
+            <h3>User Status: {{ status }}</h3>
+            <h4>Change Password</h4>
+            <input #OldPasswordInput class="search-box" type="password" placeholder="Enter old password...">  
+            <input #NewPasswordInput class="search-box" type="password" placeholder="Enter new password..."> 
+            <p class="errormessage">{{ alert }}</p>
+            <button class="circle_button" routerLink="/dashboard">Back</button>
+            <button class="circle_button" (click)="changePasswordButton(OldPasswordInput.value, NewPasswordInput.value)">Submit</button>
+        </div>        
+    </div>
+</div>

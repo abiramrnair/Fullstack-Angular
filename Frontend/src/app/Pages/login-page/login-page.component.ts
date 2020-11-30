@@ -33,6 +33,10 @@ export class LoginPageComponent implements OnInit {
           this.invalid = "Invalid Email"
         }
 
+        else if (res.body.message == "Wrong Password") {
+          this.invalid = "Incorrect Password"
+        }
+
         else if (res.body.message == "Account Inactive, Contact Administrator") {
           this.invalid = "Account Inactive, Contact Administrator"
         }
@@ -43,8 +47,7 @@ export class LoginPageComponent implements OnInit {
 
         else {
           this.router.navigate(['/dashboard']);
-        }
-            
+        }            
       })
   };
   

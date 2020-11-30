@@ -85,5 +85,15 @@ export class AuthenticationService {
         }, {
           observe: 'response'
     })
+  } 
+
+  changePassword(old_password: string, new_password: string, email: string) {
+    return this.http.put(`${this.webReqService.MAIN_URL}/api/private/updatepassword`, {
+      email,
+      old_password,
+      new_password
+    }, {
+      observe: 'response'
+    })
   }
 }

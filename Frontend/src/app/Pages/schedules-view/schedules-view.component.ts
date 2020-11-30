@@ -1,5 +1,7 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { AuthenticationService } from 'src/app/authentication.service';
 import { ScheduleService } from 'src/app/schedule.service';
 
 
@@ -10,7 +12,7 @@ import { ScheduleService } from 'src/app/schedule.service';
 })
 export class SchedulesViewComponent implements OnInit {
 
-  constructor(private scheduleService: ScheduleService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private scheduleService: ScheduleService, private route: ActivatedRoute, private router: Router, private authenticate: AuthenticationService) { }
 
   lists: any[];
   items: any[];
@@ -20,7 +22,7 @@ export class SchedulesViewComponent implements OnInit {
   course_title: string;
   flag: string;  
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
 
     this.route.params.subscribe(
       (params: Params) => {
