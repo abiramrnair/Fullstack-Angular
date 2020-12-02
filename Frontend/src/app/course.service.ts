@@ -25,6 +25,10 @@ export class CourseService {
     return this.webReqService.addCourses(schedule_name, course_name, subject_code, course_code);
   }
 
+  deleteCourse(schedule_name: string, course_name: string, subject_code: string, course_code: string) {
+    return this.webReqService.deleteCourses(schedule_name, course_name, subject_code, course_code);
+  }
+
   addPublicCourse(schedule_name: string, course_name: string, subject_code: string, course_code: string) {
     return this.webReqService.addPublicCourses(schedule_name, course_name, subject_code, course_code);
   }
