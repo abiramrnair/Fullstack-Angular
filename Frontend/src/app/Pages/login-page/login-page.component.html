@@ -6,6 +6,7 @@
             <h4>Password</h4><input #passwordinput type="password" placeholder="Enter Password">
             <button class="button" (click)="loginButton(emailinput.value, passwordinput.value)">Submit</button>
             <p class="errormessage">{{ invalid }}</p>
+            <button *ngIf="button > 0" id="linkbutton" (click)="authButton()" routerLink="/verified">Click To Verify Account</button>
             <h5 routerLink="/register">New User? Register Here</h5>
             <h5 id="hometag" routerLink="/landing">Home</h5>
         </div>

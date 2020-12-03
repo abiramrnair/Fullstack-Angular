@@ -11,14 +11,16 @@ export class PublicChooseCoursesComponent implements OnInit {
 
   subjects: any[];
   courses: any[];
+  reviews: any[];
   schedule: string;
   doesExist: Boolean;
   size: any;
+  coll: any;
+  i: any;
 
   constructor(private courseService: CourseService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
 
     this.courseService.subjectDropDown().subscribe((items: any) => { // Dynamic drop down of available subject codes             
         this.subjects = items;        
@@ -61,12 +63,22 @@ export class PublicChooseCoursesComponent implements OnInit {
     })      
   }
   
-  softMatchSearchButton(search_string: string) {
+  softMatchSearchButton(search_string: string) { // softmatch search function gets value from textbox
     this.size = 0;
-    this.courseService.softMatchListCourses(search_string).subscribe((items: any) => {        
-        this.courses = items;
-        this.size = items.length;
+    this.courseService.softMatchListCourses(search_string).subscribe((items: any) => {
+        if (items.message == "Invalid String") {
+          this.size = -2;
+        } else {       
+          this.courses = items;
+          this.size = items.length;
+        }      
     })
   }
 
+  getCourseReview(subject: string, catalog_number: string, classname: string) { // accessing mat expansion panel reveals review information
+    const courseName = subject + ' ' + catalog_number + ' - ' + classname;
+    this.courseService.getIndividualCourseReview(courseName).subscribe((items: any) => {
+        this.reviews = items;        
+    })
+  }
 }

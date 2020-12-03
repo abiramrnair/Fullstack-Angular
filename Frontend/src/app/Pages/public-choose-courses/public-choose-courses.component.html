@@ -60,41 +60,53 @@
 
                 <div class="displaybox">
                     <div class= "course" *ngFor="let course of courses">                
-                            <h3>{{ course.subject }} {{ course.catalog_nbr }} - {{ course.className }}</h3>                    
+                            <h3>{{ course.subject }} {{ course.catalog_nbr }} - {{ course.className }}</h3>
                             <p>{{ course.catalog_description }}</p>      
-                            <table>
-                                <tr>
-                                    <th>Section</th>
-                                    <th>Component</th>
-                                    <th>Class Number</th>
-                                    <th>Days</th>
-                                    <th>Start Time</th>
-                                    <th>End Time</th>
-                                    <th>Campus</th>
-                                    <th>Instructor</th>
-                                    <th>Status</th>
-                                </tr>
-                                <tr>
-                                    <td>{{ course.course_info[0].class_section }}</td>
-                                    <td class="{{ course.course_info[0].ssr_component }}">{{ course.course_info[0].ssr_component }}</td>
-                                    <td>{{ course.course_info[0].class_nbr }}</td>
-                                    <td>{{ course.course_info[0].days }}</td>
-                                    <td>{{ course.course_info[0].start_time }}</td>
-                                    <td>{{ course.course_info[0].end_time }}</td>
-                                    <td>{{ course.course_info[0].campus }}</td>
-                                    <td>{{ course.course_info[0].instructors }}</td>
-                                    <td>{{ course.course_info[0].enrl_stat }}</td>
-                                </tr>
-                                
-                            </table> 
-                    </div> 
+                                <table>
+                                    <tr>
+                                        <th>Section</th>
+                                        <th>Component</th>
+                                        <th>Class Number</th>
+                                        <th>Days</th>
+                                        <th>Start Time</th>
+                                        <th>End Time</th>
+                                        <th>Campus</th>
+                                        <th>Instructor</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ course.course_info[0].class_section }}</td>
+                                        <td class="{{ course.course_info[0].ssr_component }}">{{ course.course_info[0].ssr_component }}</td>
+                                        <td>{{ course.course_info[0].class_nbr }}</td>
+                                        <td>{{ course.course_info[0].days }}</td>
+                                        <td>{{ course.course_info[0].start_time }}</td>
+                                        <td>{{ course.course_info[0].end_time }}</td>
+                                        <td>{{ course.course_info[0].campus }}</td>
+                                        <td>{{ course.course_info[0].instructors }}</td>
+                                        <td>{{ course.course_info[0].enrl_stat }}</td>
+                                    </tr>                                
+                                </table> 
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header (click)="getCourseReview(course.subject, course.catalog_nbr, course.className)">
+                                    <mat-panel-title>
+                                        View Reviews
+                                    </mat-panel-title> 
+                                </mat-expansion-panel-header>
+                                <div class="reviewbox" *ngFor="let review of reviews">
+                                    <p><b>Author: </b>{{ review.username }}</p>
+                                    <p><b>Date Created: </b>{{ review.time_created }}</p>
+                                    <p><b>Content: </b>{{ review.review }}</p>
+                                </div>                      
+                            </mat-expansion-panel>                                  
+                        </div> 
                 </div>    
 
             </ng-container>           
 
             <ng-template #elseTemplate>
                 <h3 class="boxmessage" *ngIf="size == 0">Course Not Found</h3>
-                <h3 class="boxmessage" *ngIf="size == -1">Search For A Course</h3>              
+                <h3 class="boxmessage" *ngIf="size == -1">Search For A Course</h3>  
+                <h3 class="boxmessage" *ngIf="size == -2">Invalid String Entered</h3>            
             </ng-template>                  
         </div>
     </div>

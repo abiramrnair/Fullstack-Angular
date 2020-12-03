@@ -21,6 +21,8 @@ import { AdminUsersettingsComponent } from './Pages/admin-usersettings/admin-use
 import { AdminReviewsettingsComponent } from './Pages/admin-reviewsettings/admin-reviewsettings.component';
 import { VerificationAckComponent } from './Pages/verification-ack/verification-ack.component';
 import { UserSettingsComponent } from './Pages/user-settings/user-settings.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { matExpansionAnimations, MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { UserSettingsComponent } from './Pages/user-settings/user-settings.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule,
+    MatExpansionModule   
   ],
   providers: [ 
     { provide: HTTP_INTERCEPTORS, useClass: WebrequestinterceptorService, multi: true }
@@ -54,3 +58,4 @@ import { UserSettingsComponent } from './Pages/user-settings/user-settings.compo
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

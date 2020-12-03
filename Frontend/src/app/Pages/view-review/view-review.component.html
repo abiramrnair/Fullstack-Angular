@@ -7,7 +7,8 @@
         <ng-container *ngIf="size > 0; else elseTemplate">            
             <div class="review-box" *ngFor="let review of reviews">
                 <h3>Course: {{ review.course }}</h3>
-                <h3>Submitted by: {{ review.username }}</h3>                
+                <h3>Submitted by: {{ review.username }}</h3>
+                <h3>Date Created: {{ review.time_created }}</h3>                
                 <p>{{ review.review }}</p>
             </div>
         </ng-container>

@@ -16,6 +16,7 @@ div {
     display: flex;
     flex-direction: column;
     width: 250px;
+    min-width: 250px;
     background: white;
     padding: 42px;
     border-top-left-radius: 15px;
@@ -265,4 +266,57 @@ span {
 
 .ownertitle {
     margin-top: -2%;
+}
+
+.reviewbox {
+    outline: 1px solid black;
+    padding: 4px 8px;
+    margin-top: 3%;
+    word-wrap: break-word;
+}
+
+.course {
+    background-color: white;
+    border-radius: 7px;    
+    font-size: small;
+    width: 450px;   
+    margin-top: -3%; 
+}
+
+.course, p {
+    text-align: justify;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 3%;
+        
+}
+  
+td, th {
+    border: 1px solid black;
+    text-align: center;
+       
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr {
+    font-weight: bold;
+}
+
+.LEC {
+    background-color: #fed8b1;
+}
+
+.LAB {
+    background-color: #add8e6;
+}
+
+.TUT {
+    background-color: #98fb98;
 }

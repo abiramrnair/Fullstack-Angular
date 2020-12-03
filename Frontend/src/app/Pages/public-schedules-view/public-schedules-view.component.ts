@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { CourseService } from 'src/app/course.service';
 import { ScheduleService } from 'src/app/schedule.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ScheduleService } from 'src/app/schedule.service';
 
 export class PublicSchedulesViewComponent implements OnInit {
 
-  constructor(private scheduleService: ScheduleService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private scheduleService: ScheduleService, private route: ActivatedRoute, private router: Router, private courseService: CourseService) { }
 
   lists: any[];
   items: any;
@@ -22,6 +23,8 @@ export class PublicSchedulesViewComponent implements OnInit {
   flag: string;  
   owner: any;
   description: string;
+  time_stamp: string;
+  information: any;
 
   ngOnInit(): void {
 
@@ -38,9 +41,10 @@ export class PublicSchedulesViewComponent implements OnInit {
               }
 
               else {                                    
-                this.items = items.array_list;
+                this.items = items.array_list;                
                 this.course_size = items.array_list.length;
-                this.description = items.description;                
+                this.description = items.description;
+                this.time_stamp = items.time;                                              
                 this.schedule_size = 1;     
                 this.size = 1;                        
               }               
@@ -53,4 +57,9 @@ export class PublicSchedulesViewComponent implements OnInit {
     })
   }
 
+  getCourseInformationButton(className: string, subjectcode: string, coursecode: string) {
+      this.courseService.getCourseInformation(className, subjectcode, coursecode).subscribe((items: any) => {        
+        this.information = items;                
+    })
+  }
 }

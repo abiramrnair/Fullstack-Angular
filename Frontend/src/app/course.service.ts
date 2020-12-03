@@ -45,6 +45,14 @@ export class CourseService {
     return this.webReqService.get('api/public/courses/get-review');
   }
 
+  getIndividualCourseReview(className: string) {
+    return this.webReqService.get(`api/public/courses/get-course-review/${className}`);
+  }
+
+  getCourseInformation(className: string, subjectcode: string, coursecode: string) {
+    return this.webReqService.get(`api/courses/info/${className}/${subjectcode}/${coursecode}`);
+  }
+
   getAllCourseReviews() {
     return this.webReqService.get('api/admin/reviews/displayall');
   }
