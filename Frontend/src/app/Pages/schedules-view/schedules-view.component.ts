@@ -23,6 +23,8 @@ export class SchedulesViewComponent implements OnInit {
   course_title: string;
   flag: string;  
   time: string;
+  information: any;
+  description: string;
 
   ngOnInit(): void {   
 
@@ -38,6 +40,7 @@ export class SchedulesViewComponent implements OnInit {
 
               else {                                    
                   this.items = items.array_list;
+                  this.description = items.description;
                   this.time = items.time;
                   this.schedule_size = 0;
 
@@ -106,4 +109,10 @@ export class SchedulesViewComponent implements OnInit {
       this.router.navigate(['user/schedules', this.schedule]);      
     })
   }
+
+  getCourseInformationButton(className: string, subjectcode: string, coursecode: string) {
+    this.courseService.getCourseInformation(className, subjectcode, coursecode).subscribe((items: any) => {        
+      this.information = items;                
+  })
+}
 }

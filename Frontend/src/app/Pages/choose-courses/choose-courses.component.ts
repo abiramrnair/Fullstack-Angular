@@ -17,6 +17,7 @@ export class ChooseCoursesComponent implements OnInit {
   schedule: string;
   doesExist: Boolean;
   size: any;
+  reviews: any[];
 
   constructor(private courseService: CourseService, private router: Router, private route: ActivatedRoute) { }
 
@@ -69,6 +70,13 @@ export class ChooseCoursesComponent implements OnInit {
         this.courses = items;
         this.size = items.length;
     })
-  }   
+  } 
+  
+  getCourseReview(subject: string, catalog_number: string, classname: string) { // accessing mat expansion panel reveals review information
+    const courseName = subject + ' ' + catalog_number + ' - ' + classname;
+    this.courseService.getIndividualCourseReview(courseName).subscribe((items: any) => {
+        this.reviews = items;        
+    })
+  }
 }
 

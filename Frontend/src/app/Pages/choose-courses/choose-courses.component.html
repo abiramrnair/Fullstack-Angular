@@ -72,9 +72,20 @@
                                     <td>{{ course.course_info[0].campus }}</td>
                                     <td>{{ course.course_info[0].instructors }}</td>
                                     <td>{{ course.course_info[0].enrl_stat }}</td>
-                                </tr>
-                                
+                                </tr>                                                            
                             </table> 
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header (click)="getCourseReview(course.subject, course.catalog_nbr, course.className)">
+                                    <mat-panel-title >
+                                        View Reviews
+                                    </mat-panel-title> 
+                                </mat-expansion-panel-header>
+                                <div class="reviewbox" *ngFor="let review of reviews">
+                                    <p><b>Author: </b>{{ review.username }}</p>
+                                    <p><b>Date Created: </b>{{ review.time_created }}</p>
+                                    <p><b>Content: </b>{{ review.review }}</p>
+                                </div>                      
+                            </mat-expansion-panel>    
                     </div> 
                 </div>    
 

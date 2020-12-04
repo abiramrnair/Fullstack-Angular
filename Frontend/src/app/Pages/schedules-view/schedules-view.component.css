@@ -16,6 +16,7 @@ div {
     display: flex;
     flex-direction: column;
     width: 250px;
+    min-width: 250px;
     background: white;
     padding: 42px;
     border-top-left-radius: 15px;
@@ -176,7 +177,7 @@ div {
     color: #F0F0F0;
     font-size: 30px;
     position: relative;
-    top: 120px;    
+    top: 50px;    
 }
 
 #helpbutton {
@@ -194,7 +195,7 @@ div {
 
 .creatortag {
     position: relative;
-    top: 250px;
+    top: 200px;
     left: 430px;
     color: #989898;
 }
@@ -266,3 +267,52 @@ span {
     background-color:#4169E1;       
 }
 
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 3%;
+        
+}
+  
+td, th {
+    border: 1px solid black;
+    text-align: center;
+       
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr {
+    font-weight: bold;
+}
+
+.LEC {
+    background-color: #fed8b1;
+}
+
+.LAB {
+    background-color: #add8e6;
+}
+
+.TUT {
+    background-color: #98fb98;
+}
+
+.course {
+    background-color: white;
+    border-radius: 7px;    
+    font-size: small;
+    width: 450px;   
+    margin-top: -3%; 
+}
+
+.course, p {
+    text-align: justify;
+}
+
+.infomessage {
+    margin-top: -1%;
+}
