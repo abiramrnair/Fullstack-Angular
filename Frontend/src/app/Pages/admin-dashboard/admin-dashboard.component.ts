@@ -14,6 +14,10 @@ export class AdminDashboardComponent implements OnInit {
   username: string;
 
   ngOnInit(): void {
+
+    this.authenticate.adminLetMeIn().subscribe((message: any) => {      
+    })
+    
     this.username = this.authenticate.getUserName();
   }  
   

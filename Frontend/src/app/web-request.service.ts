@@ -126,4 +126,18 @@ export class WebRequestService {
       observe: 'response'
     })
   }
+
+  getPolicies() {
+    return this.http.get(`${this.MAIN_URL}/api/public/policies`);
+  }
+
+  submitPolicies(dmca_policy: string, aup_policy:string, security_policy: string) {
+    return this.http.put(`${this.MAIN_URL}/api/admin/site/updatepolicy`, {
+      dmca_policy,
+      aup_policy,
+      security_policy
+    }, {
+      observe: 'response'
+    })
+  }
 }

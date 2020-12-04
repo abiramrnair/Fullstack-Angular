@@ -14,6 +14,10 @@ export class UserDashboardComponent implements OnInit {
   username: string;
 
   ngOnInit(): void {
+
+    this.authenticate.userLetMeIn().subscribe((message: any) => {      
+    });
+
     this.username = this.authenticate.getUserName();
   }  
   

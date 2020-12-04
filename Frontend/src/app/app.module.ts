@@ -25,6 +25,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { matExpansionAnimations, MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditScheduleComponent } from './Pages/edit-schedule/edit-schedule.component';
+import { AdminPolicyEditComponent } from './Pages/admin-policy-edit/admin-policy-edit.component';
+import { PoliciesComponent } from './Pages/policies/policies.component';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { EditScheduleComponent } from './Pages/edit-schedule/edit-schedule.compo
     AdminReviewsettingsComponent,
     VerificationAckComponent,
     UserSettingsComponent,
-    EditScheduleComponent
+    EditScheduleComponent,    
+    AdminPolicyEditComponent, PoliciesComponent
     
   ],
   imports: [

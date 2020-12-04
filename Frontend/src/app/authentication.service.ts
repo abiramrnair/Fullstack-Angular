@@ -96,4 +96,12 @@ export class AuthenticationService {
       observe: 'response'
     })
   }
+
+  userLetMeIn() {
+    return this.http.get(`${this.webReqService.MAIN_URL}/api/letmein`);
+  }
+
+  adminLetMeIn() {
+    return this.http.get(`${this.webReqService.MAIN_URL}/api/admin/letmein`);
+  }
 }

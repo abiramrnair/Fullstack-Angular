@@ -1,0 +1,27 @@
+<div class="view-box">
+    <div class="modal-box">
+        <h1>
+            Edit Site Policies
+        </h1>
+
+        <div>
+           <h4>DMCA Policy</h4>  
+           <textarea #DMCAInput class="search-box" cols="50" rows="10">{{ dmca_policy }}</textarea>      
+        </div>
+
+        <div>
+            <h4>AUP Policy</h4>
+            <textarea #AUPInput class="search-box" cols="50" rows="10">{{ aup_policy }}</textarea>        
+         </div>
+
+         <div>
+            <h4>Security Policy</h4> 
+            <textarea #SecurityInput class="search-box" cols="50" rows="10">{{ security_policy }}</textarea>         
+         </div>
+
+        <div>
+            <button class="button" routerLink="/admin/dashboard">Cancel</button>
+            <button class="button" (click)="submitNewPoliciesButton(DMCAInput.value, AUPInput.value, SecurityInput.value)" routerLink="/admin/dashboard">Save</button>
+        </div>        
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard.component';
+import { AdminPolicyEditComponent } from './Pages/admin-policy-edit/admin-policy-edit.component';
 import { AdminReviewsettingsComponent } from './Pages/admin-reviewsettings/admin-reviewsettings.component';
 import { AdminUsersettingsComponent } from './Pages/admin-usersettings/admin-usersettings.component';
 import { ChooseCoursesComponent } from './Pages/choose-courses/choose-courses.component';
@@ -8,6 +9,7 @@ import { EditScheduleComponent } from './Pages/edit-schedule/edit-schedule.compo
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { NewScheduleComponent } from './Pages/new-schedule/new-schedule.component';
+import { PoliciesComponent } from './Pages/policies/policies.component';
 import { PublicChooseCoursesComponent } from './Pages/public-choose-courses/public-choose-courses.component';
 import { PublicNewScheduleComponent } from './Pages/public-new-schedule/public-new-schedule.component';
 import { PublicSchedulesViewComponent } from './Pages/public-schedules-view/public-schedules-view.component';
@@ -22,6 +24,7 @@ import { WriteReviewComponent } from './Pages/write-review/write-review.componen
 const routes: Routes = [
   { path: '', redirectTo: '/landing', pathMatch: 'full'},  
   { path: 'landing', component: LandingPageComponent},
+  { path: 'policies', component: PoliciesComponent},  
   { path: 'login', component: LoginPageComponent},
   { path: 'register', component: RegisterPageComponent},
   { path: 'verified', component: VerificationAckComponent},
@@ -41,6 +44,7 @@ const routes: Routes = [
   { path: 'admin/dashboard', component: AdminDashboardComponent},
   { path: 'admin/dashboard/usersettings', component: AdminUsersettingsComponent},
   { path: 'admin/dashboard/reviewsettings', component: AdminReviewsettingsComponent},
+  { path: 'admin/dashboard/policyedit', component: AdminPolicyEditComponent},
   { path: '**', redirectTo: '/landing', pathMatch: 'full'},  
 ];
 

@@ -29,6 +29,16 @@ h1 {
     outline: none;
 }
 
+#infobutton {
+    position: relative;
+    margin-left: 5%;
+    left: 160%;
+    top: 400%;
+    font-size: 14px;
+    padding: 10px 20px;
+
+}
+
 .button:hover {
     background-color:#FFA07A;
 }
