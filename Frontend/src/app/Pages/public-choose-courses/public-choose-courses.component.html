@@ -9,7 +9,7 @@
                         
                     <label class="search-title">Subject: </label>
                       <select #SelectBoxInput class="selectbox" id="select_subject" name="subject">
-                        <option hidden>All Subjects</option>
+                        <option>All Subjects</option>
                         <option *ngFor="let subject of subjects">{{ subject }}
                         </option>
                                        
@@ -21,19 +21,7 @@
                         <label class="search-title">Course Code: </label>
                         <input #CourseCodeInput class="textbox" type="text" maxlength="5" id="course_nbr" name="course_number" placeholder="eg. 1927A"><br>
                     
-                    </div>
-
-                    <div class="searchbox">
-                    
-                    <label class="search-title">Component: </label>
-                    <select #ComponentInput class="selectbox" id="components" name="course_cmpnt">
-                        <option value="all_components">All</option>
-                        <option value="LEC">Lecture</option>
-                        <option value="TUT">Tutorial</option>
-                        <option value="LAB">Laboratory</option>
-                    </select><br>        
-                    
-                    </div>
+                    </div>                   
 
                     <div class="searchbox">                        
                         <input #KeywordInput id="keywordsearch" class="textbox" type="text" name="course_number" placeholder="Enter Keywords"><button (click)="softMatchSearchButton(KeywordInput.value)" id="gobutton" class="add_schedule_button">GO</button><br>                    
@@ -47,7 +35,7 @@
                                              
             </div>
 
-            <button id="search" class="add_schedule_button" (click)="listCourses(SelectBoxInput.value, CourseCodeInput.value , ComponentInput.value)" >Search</button>
+            <button id="search" class="add_schedule_button" (click)="listCourses(SelectBoxInput.value, CourseCodeInput.value)" >Search</button>
             <button class="add_schedule_button" routerLink="/public/schedules/{{schedule}}">Back</button>
         </div>
 

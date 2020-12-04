@@ -9,8 +9,8 @@ export class CourseService {
 
   constructor(private webReqService: WebRequestService, private authentication: AuthenticationService) { }
 
-  listCourses(subject: string, course_number: string, course_cmpnt: string) {
-    return this.webReqService.get('api/courses?' + 'subject=' + subject + '&course_number=' +  course_number + '&course_cmpnt=' + course_cmpnt);
+  listCourses(subject: string, course_number: string) {
+    return this.webReqService.get('api/courses?' + 'subject=' + subject + '&course_number=' +  course_number);
   }
 
   softMatchListCourses(search_string: string) {

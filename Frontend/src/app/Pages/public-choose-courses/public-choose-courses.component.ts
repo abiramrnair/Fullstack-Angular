@@ -35,11 +35,11 @@ export class PublicChooseCoursesComponent implements OnInit {
     this.size = -1;
   }
   
-  listCourses(subject: string, course_number: string, course_cmpnt: string) { // user clicks search, gets list
+  listCourses(subject: string, course_number: string) { // user clicks search, gets list
 
     this.size = 0;
 
-    this.courseService.listCourses(subject, course_number, course_cmpnt).subscribe((items: any) => {        
+    this.courseService.listCourses(subject, course_number).subscribe((items: any) => {        
           
           this.courses = items;
           this.size = items.length;

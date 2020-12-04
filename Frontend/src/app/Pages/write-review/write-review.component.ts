@@ -23,9 +23,15 @@ export class WriteReviewComponent implements OnInit {
     })
   }
 
-  addReviewButton(review: string) {      
-      this.courseService.addCourseReview(review, this.course_name).subscribe((res: HttpResponse<any>) => {
-        console.log(res)
-    })
+  addReviewButton(review: string) {  
+    let answer = confirm('This will be a public review. Are you sure you want to publish?');
+      if (answer == true) {    
+          this.courseService.addCourseReview(review, this.course_name).subscribe((res: HttpResponse<any>) => {
+          console.log(res)
+        })
+      }
+        else if (answer == false) {
+          this.router.navigate([`user/schedules/${this.schedule_name}/${this.course_name}/write-review`]); 
+      } 
   }
 }

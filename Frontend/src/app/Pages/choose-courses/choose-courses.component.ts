@@ -1,8 +1,8 @@
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { CourseService } from 'src/app/course.service';
-
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-choose-courses',
@@ -36,11 +36,12 @@ export class ChooseCoursesComponent implements OnInit {
     this.size = -1;
   }
   
-  listCourses(subject: string, course_number: string, course_cmpnt: string) { // user clicks search, gets list
+  listCourses(subject: string, course_number: string) { // user clicks search, gets list
 
     this.size = 0;
 
-    this.courseService.listCourses(subject, course_number, course_cmpnt).subscribe((items: any) => {     
+    this.courseService.listCourses(subject, course_number).subscribe((items: any) => {
+          console.log(items)     
           this.courses = items;
           this.size = items.length;                                        
     })          
@@ -68,5 +69,6 @@ export class ChooseCoursesComponent implements OnInit {
         this.courses = items;
         this.size = items.length;
     })
-  }
+  }   
 }
+

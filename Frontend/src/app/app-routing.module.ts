@@ -4,6 +4,7 @@ import { AdminDashboardComponent } from './Pages/admin-dashboard/admin-dashboard
 import { AdminReviewsettingsComponent } from './Pages/admin-reviewsettings/admin-reviewsettings.component';
 import { AdminUsersettingsComponent } from './Pages/admin-usersettings/admin-usersettings.component';
 import { ChooseCoursesComponent } from './Pages/choose-courses/choose-courses.component';
+import { EditScheduleComponent } from './Pages/edit-schedule/edit-schedule.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { LoginPageComponent } from './Pages/login-page/login-page.component';
 import { NewScheduleComponent } from './Pages/new-schedule/new-schedule.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'user/schedules', component: SchedulesViewComponent},
   { path: 'user/schedules/new-schedule', component: NewScheduleComponent},
   { path: 'user/schedules/:schedule_name', component: SchedulesViewComponent},
+  { path: 'user/schedules/:schedule_name/edit', component: EditScheduleComponent},
   { path: 'user/schedules/:schedule_name/addcourses', component: ChooseCoursesComponent},
   { path: 'user/schedules/:schedule_name/:course_name/write-review', component: WriteReviewComponent},
   { path: 'public/viewreviews', component: ViewReviewComponent},

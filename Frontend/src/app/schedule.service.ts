@@ -52,4 +52,8 @@ export class ScheduleService {
   doesPrivateScheduleExist(schedule_id: string) {
     return this.webReqService.get(`api/private/schedulecheck/${schedule_id}`);
   }
+
+  editPrivateSchedule(old_schedule_id: string, new_schedule_id: string, new_description: string) {
+    return this.webReqService.editSchedule(old_schedule_id, new_schedule_id, new_description);
+  }
 }

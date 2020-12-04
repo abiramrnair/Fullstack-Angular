@@ -116,4 +116,14 @@ export class WebRequestService {
       observe: 'response'
     })
   }
+
+  editSchedule(old_schedule_name: string, new_schedule_name: string, new_schedule_description: string) {
+    return this.http.post(`${this.MAIN_URL}/api/private/schedules/edit`, {
+      old_schedule_name,
+      new_schedule_name,
+      new_schedule_description
+    }, {
+      observe: 'response'
+    })
+  }
 }

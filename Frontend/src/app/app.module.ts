@@ -23,6 +23,8 @@ import { VerificationAckComponent } from './Pages/verification-ack/verification-
 import { UserSettingsComponent } from './Pages/user-settings/user-settings.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { matExpansionAnimations, MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditScheduleComponent } from './Pages/edit-schedule/edit-schedule.component';
 
 @NgModule({
   declarations: [
@@ -43,14 +45,17 @@ import { matExpansionAnimations, MatExpansionModule } from '@angular/material/ex
     AdminUsersettingsComponent,
     AdminReviewsettingsComponent,
     VerificationAckComponent,
-    UserSettingsComponent    
+    UserSettingsComponent,
+    EditScheduleComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NoopAnimationsModule,
-    MatExpansionModule   
+    MatExpansionModule,
+    MatDialogModule   
   ],
   providers: [ 
     { provide: HTTP_INTERCEPTORS, useClass: WebrequestinterceptorService, multi: true }

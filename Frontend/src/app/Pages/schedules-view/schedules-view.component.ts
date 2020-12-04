@@ -63,21 +63,42 @@ export class SchedulesViewComponent implements OnInit {
   }
 
   deletethisSchedule() {
+    let answer = confirm('Are you sure you want to delete this schedule?');
+
+    if (answer == true) {
       return this.scheduleService.deletethisSchedule(this.schedule).subscribe((res: any) => {
         console.log(res);
       })
+    }
+    else if (answer == false) {
+      this.router.navigate(['user/schedules', this.schedule]); 
+    }
   }
 
   deleteAllSchedules() {
-    return this.scheduleService.deleteAllSchedules().subscribe((res: any) => {
+    let answer = confirm('Are you sure you want to delete all schedules?');
+
+    if (answer == true) {
+      return this.scheduleService.deleteAllSchedules().subscribe((res: any) => {
         this.router.navigate(['user/schedules']);         
-    })
+      })
+    }
+    else if (answer == false) {
+      this.router.navigate(['user/schedules', this.schedule]); 
+    }
   }
 
-  deleteCourseButton(course_name: string, subject_code: string, course_code: string) {
+  deleteCourseButton(course_name: string, subject_code: string, course_code: string) { // Delete course method with confirmation
+    let answer = confirm('Are you sure you want to delete the course?');
+    
+    if (answer == true) {
       return this.courseService.deleteCourse(this.schedule, course_name, subject_code, course_code).subscribe((res: any) => {
         this.router.navigate(['user/schedules', this.schedule]);        
       })
+    }    
+    else if (answer == false) {
+      this.router.navigate(['user/schedules', this.schedule]); 
+    }
   }
 
   switchFlag() {

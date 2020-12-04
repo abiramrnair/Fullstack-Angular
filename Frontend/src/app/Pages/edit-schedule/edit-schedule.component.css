@@ -1,0 +1,45 @@
+.modal-box {
+    min-height: 200px;
+    width: 100%;
+    max-width: 700px;
+    background: white;
+    border-radius: 7px;
+    padding: 35px;
+    position: absolute;
+    top: 270px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.button {
+    position: relative;
+    top: 20px;
+    left: 520px;
+    background-color: #FF9999;
+    border: none;
+    color: white;
+    padding: 7px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-left: 1%;
+}
+
+.button:hover {
+    background-color: #FFA07A;
+}

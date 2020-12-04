@@ -1,0 +1,17 @@
+<div class="view-box">
+    <div class="modal-box">
+        <h1>
+            Edit This Schedule
+        </h1>
+
+        <div>
+           <input #ScheduleNameInput class="search-box" type="text" placeholder="Enter A New Schedule Name">  
+           <input #ScheduleDescriptionInput class="search-box" type="text" placeholder="Enter New Schedule Description">         
+        </div>
+
+        <div>
+            <button class="button" routerLink="/user/schedules/{{this.schedule}}">Cancel</button>
+            <button class="button" (click)="editScheduleButton(ScheduleNameInput.value, ScheduleDescriptionInput.value)">Save</button>
+        </div>        
+    </div>
+</div>
