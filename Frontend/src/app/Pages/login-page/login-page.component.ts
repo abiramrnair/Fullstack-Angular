@@ -55,7 +55,7 @@ export class LoginPageComponent implements OnInit {
         }
 
         else if (res.body.message == "Account Inactive, Contact Administrator") {
-          this.invalid = "Account Inactive, Contact Administrator"
+          this.invalid = "Account Deactivated, Contact Administrator"
         }
 
         else if (res.body.message == "Account Is Not Verified") {
